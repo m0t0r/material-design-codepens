@@ -1,0 +1,106 @@
+html {
+  position: relative;
+}
+
+body {
+  background: #fff;
+}
+
+.header {
+  position: relative;
+  background: #009688;
+  width: 100%;
+  height: 300px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 0;
+  -webkit-transition: background 0s 0.5s;
+  transition: background 0s 0.5s;
+}
+.header .fill {
+  width: 100vw;
+  height: 100vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  z-index: 100;
+}
+.header.color-1 {
+  background: #ff9800;
+}
+.header.color-1 .fill {
+  background: #ff9800;
+}
+.header.color-2 {
+  background: #f44336;
+}
+.header.color-2 .fill {
+  background: #f44336;
+}
+.header.color-3 {
+  background: #03A9F4;
+}
+.header.color-3 .fill {
+  background: #03A9F4;
+}
+.header.color-4 {
+  background: #8BC34A;
+}
+.header.color-4 .fill {
+  background: #8BC34A;
+}
+
+#act1 {
+  background: #ff9800;
+  -webkit-transform: translateX(-150px);
+          transform: translateX(-150px);
+}
+
+#act2 {
+  background: #f44336;
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+}
+
+#act3 {
+  background: #03A9F4;
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+}
+
+#act4 {
+  background: #8BC34A;
+  -webkit-transform: translateX(150px);
+          transform: translateX(150px);
+}
+
+.action {
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  margin-left: -60px;
+  margin-top: -30px;
+  height: 60px;
+  width: 60px;
+  border: 0;
+  outline: 0;
+  background: #9E9E9E;
+  color: #fff;
+  box-shadow: 0;
+  border-radius: 100%;
+  text-align: center;
+  -webkit-transition: top 0.3s, opacity 0.2s 0.3s, box-shadow 0.2s, -webkit-transform 0.2s;
+  transition: top 0.3s, opacity 0.2s 0.3s, box-shadow 0.2s, -webkit-transform 0.2s;
+  transition: top 0.3s, transform 0.2s, opacity 0.2s 0.3s, box-shadow 0.2s;
+  transition: top 0.3s, transform 0.2s, opacity 0.2s 0.3s, box-shadow 0.2s, -webkit-transform 0.2s;
+}
+.action:before {
+  position: relative;
+  top: -2px;
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 60px;
+}

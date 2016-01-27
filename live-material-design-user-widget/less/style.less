@@ -1,0 +1,368 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
+
+
+// Responsive settings
+// ######################################################################
+
+   // Standard media queries
+   @extra-small:           ~"(min-width: 30em)";
+
+
+// Basic style
+// ---------------------------------------------------------------------
+
+    body {
+    height: 100vh;
+    background-color: #f44336;
+    transition: background-color 300ms;
+    font-family: 'Roboto', sans-serif;
+
+        // definition on @extra-small devices (small smartphone)
+        @media screen and @extra-small {
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+
+
+        &.show-menu {
+        background-color: #00ACC1; }
+    }
+
+
+
+// Widget style
+// ---------------------------------------------------------------------
+
+    // card block
+    .card {
+    background-color: #FFF;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    min-height: 405px;
+    transition: all 300ms;
+    user-select: none;
+    box-shadow: 0px 5px 43px rgba( 0, 0, 0, 0.18 );
+    animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+
+        // definition on @extra-small devices (small smartphone)
+        @media screen and @extra-small {
+        width: 290px;
+        height: 405px;
+        border-radius: 3px;
+
+            // hover status
+            &:hover {
+            cursor: pointer; }
+        }
+    }
+
+
+    // card face block
+    .card-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    flex-direction: column; }
+
+
+    // notification bullet
+    .card-face__bullet {
+    background-color: #f44336;
+    color: #FFF;
+    display: block;
+    padding: 4px 0;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    box-sizing: border-box;
+    line-height: 1.2;
+    text-align: center;
+    font-size: 12px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    box-shadow: 0px 1px 5px rgba( 0, 0, 0, 0.27 );
+    animation: bullet 500ms;
+    animation-fill-mode: both;
+    animation-delay: 1.5s;
+    animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    font-weight: bold; }
+
+
+    // specific face-1
+    .card-face.face-1 {
+    transform: translateX(0);
+
+        .show-menu & {
+        transform: translateX(-100%); }
+    }
+
+
+    // specific face-2
+    .card-face.face-2 {
+    justify-content: center;
+    transform: translateX(100%);
+
+        .show-menu & {
+        transform: translateX(0); }
+    }
+
+
+    // menu button element
+    .card-face__menu-button {
+    position: absolute;
+    top:10px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    transform: translateX( 150% );
+    animation: menu 2s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+
+        img {
+        pointer-events: none; }
+    }
+
+
+    // back arrow button
+    .card-face__back-button {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+
+        img {
+        pointer-events: none; }
+    }
+
+
+    // Settings button
+    .card-face__settings-button {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px; }
+
+
+    // user avatar element
+    .card-face__avatar {
+    display: block;
+    width: 110px;
+    height: 110px;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    transform: scale(1.2,1.2);
+    opacity: 0;
+    animation: avatar 1.5s;
+    animation-delay: 200ms;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+
+        img {
+        border-radius: 50%; }
+    }
+
+
+    // card user name element
+    .card-face__name {
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    padding: 0 20px;
+    text-align: center;
+    width: 100%;
+    color: #263238;
+    animation: fadedown 1s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000); }
+
+
+    // card user title element
+    .card-face__title {
+    font-size: 18px;
+    color: #90a4ae;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: 300;
+    animation: fadedown 1s;
+    animation-fill-mode: both;
+    animation-delay: 100ms;
+    animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+
+        // divider
+        &:after {
+        content: "";
+        background-color: #E3EBEE;
+        width: 70px;
+        height: 1px;
+        margin: 20px auto 0 auto;
+        display: block; }
+    }
+
+
+    // card footer section
+    .card-face-footer {
+    left: 0;
+    right: 0;
+    position: absolute;
+    text-align: center;
+    bottom: 20px; }
+
+
+    // social icon element
+    .card-face__social {
+    display: inline-block;
+    margin: 0 7px;
+    width: 36px;
+    height: 36px;
+    animation: socials 1.5s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000); }
+
+
+    // Specific social
+    .card-face__social:nth-child(1) {
+    animation-delay: 200ms; }
+
+    // Specific social
+    .card-face__social:nth-child(2) {
+    animation-delay: 400ms; }
+
+    // Specific social
+    .card-face__social:nth-child(3) {
+    animation-delay: 600ms; }
+
+
+    // User stats
+    .card-face__stats {
+    display: block;
+    margin: 10px 0;
+
+        .show-menu & {
+        animation: stats 1s;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000); }
+    }
+
+    // Specific stats
+    .card-face__stats:nth-of-type(1) {
+    animation-delay: 0; }
+
+    // Specific Stats
+    .card-face__stats:nth-of-type(2) {
+    animation-delay: 100ms; }
+
+    // Specific Stats
+    .card-face__stats:nth-of-type(3) {
+    animation-delay: 200ms; }
+
+
+
+// Animations
+// ----------------------------------------------------------------------
+
+
+    @keyframes avatar {
+        from {
+        transform: scale(1.2,1.2);
+        opacity: 0; }
+
+        to {
+        transform: scale(1,1);
+        opacity: 1; }
+    }
+
+
+    @keyframes menu {
+        from {
+        transform: translateX( 150% ); }
+
+        to {
+        transform: translateX( 0 ); }
+    }
+
+
+    @keyframes fadedown {
+        from {
+        transform: translateY( -50% );
+        opacity: 0; }
+
+        to {
+        transform: translateY( 0 );
+        opacity: 1; }
+    }
+
+
+    @keyframes socials {
+        from {
+        transform: translateY( 300% ); }
+
+        to {
+        transform: translateY( 0% ); }
+    }
+
+
+    @keyframes stats {
+        from {
+        transform: translateX( 300% ); }
+
+        to {
+        transform: translateX( 0% ); }
+    }
+
+
+
+
+    @keyframes bullet {
+        0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); }
+
+        0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3); }
+
+        20% {
+        transform: scale3d(1.1, 1.1, 1.1); }
+
+        40% {
+        transform: scale3d(.9, .9, .9); }
+
+        60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03); }
+
+        80% {
+        transform: scale3d(.97, .97, .97); }
+
+        100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1); }
+    }

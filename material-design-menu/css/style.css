@@ -1,0 +1,91 @@
+body {
+  background: #2A3158;
+  font-family: "Helvetica Neue";
+}
+
+#main-button {
+  position: absolute;
+  z-index: 1;
+  height: 40px;
+  width: 40px;
+  top: 50%;
+  left: 50%;
+  margin-left: -20px;
+  margin-top: -20px;
+  background: #FF4182;
+  border-radius: 40px;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.disp {
+  -webkit-transform: scale(0) rotate(90deg);
+          transform: scale(0) rotate(90deg);
+  opacity: 0;
+}
+
+.Button {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background: #FF4182;
+  border-radius: 40px;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+.Button:hover {
+  -webkit-transform: scale(1.1) !important;
+          transform: scale(1.1) !important;
+  background: #ff2d75;
+  box-shadow: 0px 0px 10px 0px #1e2440;
+}
+
+#a, #b, #c, #d {
+  margin-left: -20px;
+  margin-top: -20px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.a-clicked {
+  opacity: 1;
+  margin-left: -45px !important;
+  margin-top: -45px !important;
+  -webkit-transform: rotate(0deg) !important;
+          transform: rotate(0deg) !important;
+}
+
+.b-clicked {
+  opacity: 1;
+  margin-left: 0px !important;
+  margin-top: -45px !important;
+  -webkit-transform: rotate(0deg) !important;
+          transform: rotate(0deg) !important;
+}
+
+.c-clicked {
+  opacity: 1;
+  margin-left: -45px !important;
+  margin-top: 0px !important;
+  -webkit-transform: rotate(0deg) !important;
+          transform: rotate(0deg) !important;
+}
+
+.d-clicked {
+  opacity: 1;
+  margin-left: 0px !important;
+  margin-top: 0px !important;
+  -webkit-transform: rotate(0deg) !important;
+          transform: rotate(0deg) !important;
+}

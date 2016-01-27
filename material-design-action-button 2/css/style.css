@@ -1,0 +1,223 @@
+html { box-sizing: border-box; }
+html *, html *:before, html *:after { box-sizing: inherit; }
+
+body { font: 100%/1.375em 'Roboto', sans-serif; }
+body > p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+  -webkit-transition: all 600ms ease-out 600ms;
+  transition: all 600ms ease-out 600ms;
+}
+.open p { opacity: 0; }
+
+.action {
+  position: relative;
+  display: block;
+  width: 4em;
+  height: 4em;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow:
+    0 0.1em 0.25em rgba(0,0,0,0.15),
+    0 0.2em 1em rgba(0,0,0,0.2);
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+.action:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0.25em;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+  font-size: 200%;
+  font-weight: 100;
+  line-height: 0.95em;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+}
+
+.add {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  margin: 1em;
+  -webkit-transform-origin: -1200%;
+          transform-origin: -1200%;
+  background: #3f51b5;
+  box-shadow:
+    0.1em 0 0.25em rgba(0,0,0,0.15),
+    0.2em 0 1em rgba(0,0,0,0.2);
+  -webkit-transition: width 400ms ease-out,
+    height 400ms ease-out,
+    
+    z-index 0ms 400ms,
+    bottom 400ms ease-out 400ms,
+    right 400ms ease-out 400ms,
+    box-shadow 400ms ease-out 400ms,
+    -webkit-transform 400ms ease-out 400ms,
+    -webkit-transform-origin 400ms ease-out 400ms;
+  transition: width 400ms ease-out,
+    height 400ms ease-out,
+    
+    z-index 0ms 400ms,
+    bottom 400ms ease-out 400ms,
+    right 400ms ease-out 400ms,
+    box-shadow 400ms ease-out 400ms,
+    -webkit-transform 400ms ease-out 400ms,
+    -webkit-transform-origin 400ms ease-out 400ms;
+  transition: width 400ms ease-out,
+    height 400ms ease-out,
+    
+    z-index 0ms 400ms,
+    bottom 400ms ease-out 400ms,
+    right 400ms ease-out 400ms,
+    transform 400ms ease-out 400ms,
+    transform-origin 400ms ease-out 400ms,
+    box-shadow 400ms ease-out 400ms;
+  transition:
+    width 400ms ease-out,
+    height 400ms ease-out,
+    
+    z-index 0ms 400ms,
+    bottom 400ms ease-out 400ms,
+    right 400ms ease-out 400ms,
+    transform 400ms ease-out 400ms,
+    transform-origin 400ms ease-out 400ms,
+    box-shadow 400ms ease-out 400ms,
+    -webkit-transform 400ms ease-out 400ms,
+    -webkit-transform-origin 400ms ease-out 400ms;
+}
+.open .add {
+  z-index: 0;
+  bottom: 75%;
+  right: 50%;
+  width: 200em;
+  height: 200em;
+  -webkit-transform: translate(50%, 50%) rotate(-90deg);
+          transform: translate(50%, 50%) rotate(-90deg);
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  cursor: default;
+  box-shadow: none;
+  -webkit-transition: bottom 400ms ease-out,
+    right 400ms ease-out,
+    box-shadow 400ms ease-out,
+    z-index 0ms 400ms,
+    width 400ms ease-out 400ms,
+    height 400ms ease-out 400ms,
+    -webkit-transform 400ms ease-out,
+    -webkit-transform-origin 400ms ease-out;
+  transition: bottom 400ms ease-out,
+    right 400ms ease-out,
+    box-shadow 400ms ease-out,
+    z-index 0ms 400ms,
+    width 400ms ease-out 400ms,
+    height 400ms ease-out 400ms,
+    -webkit-transform 400ms ease-out,
+    -webkit-transform-origin 400ms ease-out;
+  transition: bottom 400ms ease-out,
+    right 400ms ease-out,
+    box-shadow 400ms ease-out,
+    transform 400ms ease-out,
+    transform-origin 400ms ease-out,
+    
+    z-index 0ms 400ms,
+    width 400ms ease-out 400ms,
+    height 400ms ease-out 400ms;
+  transition:
+    bottom 400ms ease-out,
+    right 400ms ease-out,
+    box-shadow 400ms ease-out,
+    transform 400ms ease-out,
+    transform-origin 400ms ease-out,
+    
+    z-index 0ms 400ms,
+    width 400ms ease-out 400ms,
+    height 400ms ease-out 400ms,
+    -webkit-transform 400ms ease-out,
+    -webkit-transform-origin 400ms ease-out;
+}
+.add:after { content: '+'; }
+.open .add:after { opacity: 0; }
+
+.content {
+  position: absolute;
+  top: 40%;
+  bottom: 0;
+  width: 100%;
+  padding: 1em;
+  background: #fff;
+  opacity: 0;
+  -webkit-transition: all 0ms ease-out 400ms;
+  transition: all 0ms ease-out 400ms;
+}
+.open .content { opacity: 1; }
+
+.content h1 {
+  position: absolute;
+  margin-left: 5%;
+  -webkit-transform: translateY(-1em);
+          transform: translateY(-1em);
+  font-size: 2.25em;
+  font-weight: 300;
+  top: -2em;
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: all 400ms ease-out 400ms;
+  transition: all 400ms ease-out 400ms;
+}
+.open .content h1 {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.cancel {
+  position: absolute;
+  z-index: 10;
+  top: -2em;
+  left: calc(100% - 5em);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  background: #ff4081;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+}
+.open .content .cancel { -webkit-transform: scale(1); transform: scale(1); }
+.cancel:after {
+  content: '\00d7';
+  line-height: 0.75em;
+}
+
+.content p {
+  padding: 2em;
+  -webkit-transform: translateY(4em);
+          transform: translateY(4em);
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 800ms ease-out 0ms,
+    opacity 200ms ease-out;
+  transition:
+    all 800ms ease-out 0ms,
+    opacity 200ms ease-out;
+}
+.open .content p {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}

@@ -1,0 +1,280 @@
+/*@import '_normalize.scss';*/
+
+$back-clr: linear-gradient(to bottom, #7d92d0, #576a9e);
+$card-clr: #2a8a98;
+$yuri: #f5cd8e;
+$stat: #F3C50D;
+$plus-clr: #f04e3d;
+$burg-clr: #fff468;
+$burger-clr: #efb814;
+$burger_sh-clr: #C98E0F;
+$meat-clr: #8a5e39;
+$meat_sh-clr: #6F4B2C;
+$cun-color: #fff2c5;
+
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform   : translate(-50%, -50%);
+  -o-transform     : translate(-50%, -50%);
+  -ms-transform    : translate(-50%, -50%);
+  transform        : translate(-50%, -50%);
+}
+
+@mixin centercontent{
+  position: absolute;
+}
+
+@mixin transition_one{
+  transition: 0.2s ease-out;
+}
+
+@mixin skewobj{
+    -webkit-transform: skew(24deg, -10deg) ;
+    -moz-transform   : skew(24deg, -10deg) ;
+    -o-transform     : skew(24deg, -10deg) ;
+    -ms-transform    : skew(24deg, -10deg) ;
+    transform        : skew(24deg, -10deg) ;
+}
+
+@mixin position_one{
+  @include transition_one;
+  top: 8%;
+  left: 38%;
+  box-shadow: -40px 50px 40px rgba(34, 34, 34, 0.4);
+}
+
+@mixin position_two{
+  @include transition_one;
+  top: 30%;
+  left: 26%;
+  box-shadow: -25px 36px 30px rgba(34, 34, 34, 0.45);
+}
+
+@mixin position_three{
+  @include transition_one;
+  top: 50%;
+  left: 20%;
+  box-shadow: -8px 10px 10px rgba(34, 34, 34, 0.4);
+}
+
+@mixin position_one_hov{
+  top: 22%;
+  left: 20%;
+  box-shadow: -4px 6px 10px rgba(34, 34, 34, 0.5);
+}
+
+@mixin position_two_hov{
+  top: 37%;
+  left: 16%;
+  box-shadow: -4px 6px 10px rgba(34, 34, 34, 0.5);
+}
+
+@mixin position_three_hov{
+  top: 48%;
+  left: 18%;
+  box-shadow: -8px 10px 10px rgba(34, 34, 34, 0.45);
+}
+
+@mixin noise($color) {
+  background: url(http://www.transparenttextures.com/patterns/egg-shell.png) repeat left top, $color;
+}
+@mixin paper_noise($color) {
+  background: url(http://www.transparenttextures.com/patterns/p6.png) repeat left top, $color;
+}
+@mixin little_noise($color) {
+  background: url(http://www.transparenttextures.com/patterns/otis-redding.png) repeat left top, $color;
+}
+@mixin meat_noise($color) {
+  background: url(http://www.transparenttextures.com/patterns/iron-grip.png) repeat left top, $color;
+}
+
+@mixin boxshadow{
+  box-shadow: 0 5px 10px rgba(34, 34, 34, 0.5);
+}
+
+@mixin btn {
+  position: absolute;
+  border-radius: 100%;
+  width: 50px;
+  height: 46px;
+  box-shadow: 0 2px 4px rgba(34, 34, 34, 0.5);
+}
+
+html{
+  font-size: 18px;
+  height: 100%;
+}
+
+body{
+  height: 100%;
+  margin: 0;
+  @include noise($back-clr);
+}
+
+.wrap{
+  @include centerer;
+  width: 500px;
+  height: 500px;
+  // background: white;
+}
+
+.card{
+  @include boxshadow;
+  @include skewobj;
+  position: relative;
+  margin: 10% auto;
+  @include paper_noise($card-clr);
+  width: 250px;
+  height: 400px;
+}
+
+.statbar{
+  position: relative;
+  margin: 10% auto;
+  @include paper_noise($stat);
+  width: 250px;
+  height: 20px;
+}
+
+.yuri_btn{
+  @include btn;
+  bottom: 0;
+  margin: 16px;
+  @include little_noise($yuri);
+}
+
+.plus_btn{
+  @include btn;
+  bottom: 0;
+  margin: 16px;
+  left: 82px;
+  @include little_noise($plus-clr);
+}
+
+.burger_btn{
+  @include btn;
+  bottom: 0;
+  margin: 16px;
+  right: 0;
+  @include little_noise($burg-clr);
+}
+
+.top_burger{
+  @include position_one;
+  @include centercontent;
+  overflow: hidden;
+  transform: perspective(150px) rotateX(20deg);
+  width: 160px;
+  height: 80px;
+  border-radius: 100px/80px 80px 25px  25px;
+  z-index: 100;
+  @include noise($burger-clr);
+}
+
+.meat{
+  @include position_two;
+  @include centercontent;
+  width: 170px;
+  height: 70px;
+  border-radius: 90px/30px;
+  @include meat_noise($meat-clr);
+  z-index: 99;
+}
+.meat_shadow{
+  width: 155px;
+  height: 40px;
+  margin: 2px auto;
+  border-radius: 80px/20px;
+  @include meat_noise($meat_sh-clr);
+  z-index: 99;
+}
+
+.bottom_burger{
+  @include position_three;
+  @include centercontent;
+  transform: perspective(150px) rotateX(-20deg);
+  width: 160px;
+  height: 80px;
+  border-top-left-radius: 80px 20px;
+  border-top-right-radius: 80px 20px;
+  border-bottom-left-radius: 80px 40px;
+  border-bottom-right-radius: 80px 40px;
+  z-index: 98;
+  @include noise($burger-clr);
+}
+
+.burger_shadow{
+  width: 150px;
+  height: 38px;
+  margin: 2px auto;
+  border-radius: 80px/20px;
+  @include noise($burger_sh-clr);
+  z-index: 99;
+}
+
+.hover{
+  // cursor: pointer;
+  z-index: 101;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+:hover >{
+  .top_burger{
+    @include position_one_hov;
+  }
+  .meat{
+    @include position_two_hov;
+  }
+  .bottom_burger{
+    @include position_three_hov;
+  }
+}
+
+.kun{
+  position: absolute;
+  border-top-right-radius: 8px 4px;
+  border-bottom-left-radius: 8px 4px;
+  margin: 20px;
+  width: 8px;
+  height: 8px;
+  // background: $cun-color;
+  box-shadow: 1px 1px 5px rgba(187, 133, 39, 0.4);
+}
+
+@for $i from 1 through 15 {
+  .kun:nth-child(#{$i}) { 
+    background: $cun-color + random(95);
+    transform: rotate( +  random(360) + deg);
+    top: random(50) - 10 + px;
+    left: random(150) + px;
+  }
+}
+
+.signature{
+  @include centercontent;
+  bottom: 20px;
+  z-index: 101;
+  text-align: left;
+  img{
+    margin: 10px 0 10px 2px;
+    display: block;
+  }
+  a{
+    @include transition_one;
+    color: $cun-color;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    &:hover{
+      color: $cun-color - 62;
+    }
+  }
+}

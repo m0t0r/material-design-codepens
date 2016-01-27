@@ -1,0 +1,82 @@
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?Roboto);
+
+*, *::before, *::after {
+  @include box-sizing(border-box);
+}
+
+html, body {
+  background: #f1f1f1;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+.container {
+  @extend .centered;
+}
+
+$blue: #2196F3;
+$red:  #F44336;
+$teal: #009688;
+
+.material {
+  width: 300px;
+  height: 300px;
+  padding: 1em;
+  background: white;
+  position: relative;
+  text-align: center;
+  color: lighten(black, 30%);
+  @include box-shadow(0 0 4px 2px rgba(80,80,80, 0.1));
+  overflow: hidden;
+  @include transition(box-shadow 0.3s ease);
+  
+  &:hover {
+    @include box-shadow(0 2px 4px 4px rgba(80,80,80, 0.2));
+  }
+  
+  $time: 0.3s;
+
+  .background {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    @include transform(translateX(-50%));
+    width: 3em; height: 3em;
+    @include transition(width $time ease, height $time ease, border-radius 0.4s ease, top $time ease, left 0.3s ease);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    background-position: center center;
+    background-size: cover;
+    @include box-shadow(0 2px 4px 0px rgba(40,40,40,0.4))
+    
+  }
+  
+  .background.active {
+      width: 145%; height: 145%;
+      left: 50%; top: -20%;
+      
+      z-index: 9;
+  } 
+  
+  .background1 {
+    background: $blue;
+    left: 30%;
+  }
+  
+  .background2 {
+    background: $red;
+  }
+  
+  .background3 {
+    background: $teal;
+    left: 70%;
+  }
+}
+
+.centered {
+  position: absolute;
+  top: 50%; left: 50%;
+  @include transform(translate(-50%, -50%));
+}

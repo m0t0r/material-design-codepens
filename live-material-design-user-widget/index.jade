@@ -1,0 +1,39 @@
+<!-- Card widget -->
+div.card
+    <!-- Face 2 -->
+    div.card-face.face-2
+        <!-- Back trigger -->
+        button(data-card-back).card-face__back-button
+            img(src='http://imgh.us/arrow_1.svg' width='19' height='19' draggable='false')
+
+        img.card-face__stats(src='http://imgh.us/Likes.png' width='100' height='100' draggable='false')
+        img.card-face__stats(src='http://imgh.us/Followers.png' width='100' height='100' draggable='false')
+        img.card-face__stats(src='http://imgh.us/Views.png' width='100' height='100' draggable='false')
+
+        <!-- Settings Button -->
+        img.card-face__settings-button(src='http://imgh.us/cog.svg' width='17' height='17' draggable='false') 
+
+    <!-- Face 1 -->
+    div.card-face.face-1
+        <!-- Menu trigger -->
+        button(data-card-menu).card-face__menu-button
+            img(src='http://imgh.us/dots_1.svg' width='5' height='23' draggable='false')
+
+        <!-- Avatar -->
+        div.card-face__avatar
+            <!-- Bullet notification -->
+            span.card-face__bullet 2
+            <!-- User avatar -->
+            img(src='https://s3.amazonaws.com/uifaces/faces/twitter/csswizardry/128.jpg' width='110' height='110' draggable='false')
+        <!-- Name -->
+        h2.card-face__name Mattia Astorino
+        <!-- Title -->
+        span.card-face__title Web Designer & Developer
+        <!-- Cart Footer -->
+        div.card-face-footer
+            a.card-face__social(href='https://dribbble.com/astorino_mattia' target='_blank')
+                img(src='http://imgh.us/dribbble.svg' width='36' height='36' draggable='false')
+            a.card-face__social(href='https://www.behance.net/mattia_astorino' target='_blank')
+                img(src='http://imgh.us/beh.svg' width='36' height='36' draggable='false')
+            a.card-face__social(href='https://plus.google.com/u/0/+MattiaAstorino/posts' target='_blank')
+                img(src='http://imgh.us/plus_5.svg' width='36' height='36' draggable='false')

@@ -1,0 +1,141 @@
+//Functions 
+
+@function gutter($increment) {
+  $gutter: $increment * 8;
+  
+  @return $gutter * 1px;
+}
+
+// Base page styles
+// 
+// Presentational / utility classes used for page layout.
+
+*,
+*:before,
+*:after { box-sizing: inherit; }
+
+html { 
+  box-sizing: border-box;
+  background-color: #fafafa;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-text-stroke: .35px;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.group:before,
+.group:after {
+  display: table;
+  content: " "; 
+}
+
+.group:after { clear: both; }
+
+.absolute-center {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 320px;
+	height: 56px;
+}
+
+.disable-pointer { pointer-events: none; }
+
+.type--title { color: lighten(#fff, 13%); }
+
+// Nav Bar
+// 
+// Super minimal nav for display purpose only following material
+// design guidelines.
+// 
+// Markup:
+// <div class="nav-bar">
+//   <a href="#" class="nav-bar__menu-toggle  js-toggle-menu">
+//     ...
+//   </a>
+// </div>
+
+$nav-bar-background: #f50057 !default;
+
+.nav-bar {
+  background-color: $nav-bar-background;
+  padding: gutter(2) 16px;
+  width: 320px;
+  box-shadow: 0 3px 3px -1px rgba(0,0,0,.125);
+  font-size: 18px;
+}
+
+.nav-bar__menu-toggle { margin-right: gutter(4); }
+
+.nav-bar__menu-toggle,
+.nav-bar__title { float: left; }
+
+
+
+// Morphing Hamburger
+// 
+// Hamburger that morphs to a left pointing arrow styled in the vein
+// of googles material deisgn doc.
+// 
+// .hamburger--open    - Transitions to right arrow
+// .hamburger--closed  - Transitions to original state
+// 
+// Markup: <a href="#" class="hamburger"></a>
+
+$hamburger-color: #fff !default;
+
+%hamburger-transition { transition: all .4s ease; }
+
+.hamburger,
+.habmurger--close {
+	position: relative;
+	transform: rotate(0deg);
+	margin-top: 6px;
+	margin-bottom: 6px;
+
+	&,
+	&:before,
+	&:after {
+		display: inline-block;
+		background-color: $hamburger-color;
+		height: 2px;
+		width: 16px;
+	}
+
+	&:before,
+	&:after {
+		@extend %hamburger-transition;
+		position: absolute;
+		left: 0;
+    right: initial;
+		transform-origin: center;
+		content: '';
+	}
+
+	&:before { top: -6px; }
+
+	&:after { bottom: -6px; }
+}
+
+.hamburger--close { transform: rotate(360deg); }
+
+.hamburger--open,
+.hamburger--close {
+	@extend %hamburger-transition;
+}
+
+.hamburger--open {
+	transform: rotate(180deg);
+	
+	&:before,
+	&:after { width: 12px; }
+
+	&:before { transform: rotate(45deg) translate(7px, -4px); }
+
+	&:after { transform: rotate(-45deg) translate(7px, 4px); }
+}

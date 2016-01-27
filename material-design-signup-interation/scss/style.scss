@@ -1,0 +1,161 @@
+// Inspire by this Dribble https://dribbble.com/shots/2379703-Material-Signup-Interaction
+
+@mixin z-2 {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
+}
+
+body {
+  background: #AFF7F0;
+  font-family: Roboto;
+  overflow: hidden;
+}
+
+.app {
+  height: 500px;
+  width: 281px;
+  margin: auto;
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  overflow: hidden;
+}
+
+.content {
+  background: #5E2E91 url('http://goo.gl/M0IvMS') center 20% no-repeat;
+  background-size: 75px;
+  height: 100%;
+  width: 100%;
+  transition: .3s .2s;
+  &.background {
+    background: #5E2E91 url('http://goo.gl/M0IvMS') center 15% no-repeat;
+    background-size: 75px;
+  }
+}
+
+.button {
+  @include z-2;
+  background: #F9F9F9;
+  background-position: 0 200px; 
+  height: 56px;
+  width: 120px;
+  margin: auto;
+  position: absolute;
+  left: 0; right: 0;
+  top: 75%;
+  border-radius: 28px;
+  transition: width .3s, border-radius .3s, height .3s .1s, top .3s .1s, background .0s .6s;
+
+  &.expanded {
+    height: 250px;
+    width: 90%;
+    border-radius: 5px;
+    top: 35%;
+  }
+  &.full {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    border-radius: 0;
+    background: #F9F9F9 url('http://goo.gl/IQWdwL') no-repeat;
+    background-size: 100%;
+    background-position: 0 0; 
+    transition: .5s;
+  }
+}
+
+form {
+  width: 100%;
+  margin: auto;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  transition: .3s .6s;
+
+  &.hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: .01s;
+  }
+}
+
+input {
+  display: inline-block;
+  background: #F9F9F9;
+  width: 90%;
+  margin: 15px auto;
+  border: 0;
+  border-bottom: 1px solid lightgrey;
+  padding: 12px 0;
+  outline: 0;
+  font-size: 15px;
+}
+
+.sign-up {
+  width: 100%;
+  height: 22px;
+  padding: 20px 0;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom:0;
+  color: #5E2E91;
+  font: 500 20px Roboto;
+  text-align: center;
+  cursor: pointer;
+  transition: .5s;
+
+  &.hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+button {
+  @include z-2;
+  background: #14FFB5;
+  height: 56px;
+  width: 120px;
+  padding: 0;
+  margin: auto;
+  border: none;
+  border-radius: 28px;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+  bottom: -20px;
+  left: 0; right: 0;
+  color: #F9F9F9;
+  font: 500 20px Roboto;
+  cursor: pointer;
+  transition: .3s .7s, background .1s .3s;
+  
+  &.hidden {
+    width: 0;
+  }
+  
+  &.fab {
+    background: #14FFB5 url('http://goo.gl/wndLJ5') center center no-repeat;
+    width: 56px;
+    height: 56px;
+    margin: 0;
+    top: auto;
+    bottom: 10px;
+    left: auto;
+    right: 10px;
+    transition: .3s;
+  }
+}
+
+.header {
+  background: #5E2E91 url("http://goo.gl/A4nXXM") 8% 50% no-repeat;
+  width: 100%;
+  height: 56px;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  transition: .5s .3s;
+  &.hidden {
+  top: -100%;
+  }
+}

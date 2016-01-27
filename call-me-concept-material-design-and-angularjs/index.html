@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="ng-app="appContact"">
+  <head>
+    <meta charset="UTF-8">
+    <title>Call me - Concept material design and angularJs</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <html lang="en" ng-app="appContact">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>
+        </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.1/css/material-design-iconic-font.min.css">
+    </head>
+    
+    <body ng-controller="appContactCtrl">
+        <div class="container">
+            <div class="contacts-list">
+                <div class="status-bar">
+                    <div class="status-icon">
+                        <i class="zmdi zmdi-network-wifi">
+                        </i>
+                        <i class="zmdi zmdi-signal-cellular-3-bar">
+                        </i>
+                        <i class="zmdi zmdi-battery-50">
+                        </i>
+                        <div class="hour">
+                            12:27
+                        </div>
+                    </div>
+                </div>
+                <div class="toolbar">
+                    <div class="menu">
+                        <i class="zmdi zmdi-menu">
+                        </i>
+                    </div>
+                    <div class="search">
+                        <i class="zmdi zmdi-search">
+                        </i>
+                        <input type="text" placeholder="Buscar contatos...">
+                    </div>
+                </div>
+                <div class="list-contact" id="listContacts">
+                    <div class="list-iten" ng-repeat="contact in contacts | filter:{phone: number}"
+                    onclick="insertBg($(this))">
+                        <div class="contact-img">
+                            <img src="{{contact.img}}" style="width:40px;border-radius: 34%;" data-bg="{{contact.img}}"
+                            />
+                        </div>
+                        <div class="infos">
+                            <p class="name">
+                                {{contact.name}}
+                            </p>
+                            <p class="phone-number">
+                                {{contact.phone}}
+                            </p>
+                        </div>
+                        <div class="more">
+                            <i class="zmdi zmdi-more-vert">
+                            </i>
+                        </div>
+                    </div>
+                </div>
+                <div class="calling">
+                    <div>
+                        <div class="contact-img-box">
+                            <div class="contact-img" id="contactImg">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="contact-name">
+                                {{contactName}}
+                            </div>
+                            <div class="contact-number">
+                                {{contactPhone}}
+                            </div>
+                        </div>
+                        <div class="calling-options">
+                            <div class="stop" onclick="stopCall()">
+                                <i class="zmdi zmdi-phone ">
+                                </i>
+                            </div>
+                            <div>
+                                <i class="zmdi zmdi-volume-up">
+                                </i>
+                            </div>
+                            <div>
+                                <i class="zmdi zmdi-mic-off">
+                                </i>
+                            </div>
+                            <div>
+                                <i class="zmdi zmdi-pause">
+                                </i>
+                            </div>
+                            <div>
+                                <i class="zmdi zmdi-account-add">
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calling-bg">
+                    </div>
+                </div>
+                <div class="dialpad-box">
+                    <div class="input-dialpad">
+                        <input type="text" maxlength="8" ng-model="number">
+                        <div class="backspace" ng-click="clear(number)">
+                            <i class="zmdi zmdi-tag-close">
+                            </i>
+                        </div>
+                    </div>
+                    <div class="numbers">
+                        <div class="row-number">
+                            <div ng-click="number = number + '1'">
+                                <div>
+                                    1
+                                </div>
+                                <div class="letters">
+                                    <i class="zmdi zmdi-voicemail">
+                                    </i>
+                                </div>
+                            </div>
+                            <div ng-click="number = number + '2'">
+                                <div>
+                                    2
+                                </div>
+                                <div class="letters">
+                                    ABC
+                                </div>
+                            </div>
+                            <div ng-click="number = number + '3'">
+                                <div>
+                                    3
+                                </div>
+                                <div class="letters">
+                                    DEF
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-number">
+                            <div ng-click="number = number + '4'">
+                                <div>
+                                    4
+                                </div>
+                                <div class="letters">
+                                    GHI
+                                </div>
+                            </div>
+                            <div ng-click="number = number + '5'">
+                                <div>
+                                    5
+                                </div>
+                                <div class="letters">
+                                    JKL
+                                </div>
+                            </div>
+                            <div ng-click="number = number + '6'">
+                                <div>
+                                    6
+                                </div>
+                                <div class="letters">
+                                    MNO
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-number">
+                            <div ng-click="number = number + '7'">
+                                <div>
+                                    7
+                                </div>
+                                <div class="letters">
+                                    PQRS
+                                </div>
+                            </div>
+                            <div ng-click="number = number + '8'">
+                                <div>
+                                    8
+                                </div>
+                                <div class="letters">
+                                    TUV
+                                </div>
+                            </div>
+                            <div ng-click="number = number + '9'">
+                                <div>
+                                    9
+                                </div>
+                                <div class="letters">
+                                    WXYZ
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-number">
+                            <div ng-click="number = number + '*'">
+                                <div>
+                                    *
+                                </div>
+                            </div>
+                            <div ng-click="number = number + '0'">
+                                <div>
+                                    0
+                                </div>
+                                <div class="letters">
+                                    +
+                                </div>
+                            </div>
+                            <div ng-click="number = number + '#'">
+                                <div>
+                                    #
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-option">
+                            <i class="zmdi zmdi-time">
+                            </i>
+                            <i class="zmdi zmdi-local-phone">
+                            </i>
+                            <i class="zmdi zmdi-more-vert">
+                            </i>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation-buttons">
+                    <i class="zmdi zmdi-triangle-up" onclick="closeDialpad()">
+                    </i>
+                    <i class="zmdi zmdi-circle-o">
+                    </i>
+                    <i class="zmdi zmdi-crop-square">
+                    </i>
+                </div>
+              
+                <div class="dialpad" onclick="openDialpad()">
+                    <i class="zmdi zmdi-dialpad">
+                    </i>
+                    <div class="ripple">
+                    </div>
+                </div>
+              
+                <div class="button-wrapper">
+                    <div class="layer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js">
+        </script>
+    </body>
+
+</html>
+    
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>

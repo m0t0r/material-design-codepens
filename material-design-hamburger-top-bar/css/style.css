@@ -1,0 +1,126 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: #fafafa;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-text-stroke: .35px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.group:before,
+.group:after {
+  display: table;
+  content: " ";
+}
+
+.group:after {
+  clear: both;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 320px;
+  height: 56px;
+}
+
+.disable-pointer {
+  pointer-events: none;
+}
+
+.type--title {
+  color: white;
+}
+
+.nav-bar {
+  background-color: #f50057;
+  padding: 16px 16px;
+  width: 320px;
+  box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.125);
+  font-size: 18px;
+}
+
+.nav-bar__menu-toggle {
+  margin-right: 32px;
+}
+
+.nav-bar__menu-toggle,
+.nav-bar__title {
+  float: left;
+}
+
+.hamburger:before, .hamburger:after,
+.habmurger--close:before,
+.habmurger--close:after, .hamburger--open,
+.hamburger--close {
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.hamburger,
+.habmurger--close {
+  position: relative;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.hamburger, .hamburger:before, .hamburger:after,
+.habmurger--close,
+.habmurger--close:before,
+.habmurger--close:after {
+  display: inline-block;
+  background-color: #fff;
+  height: 2px;
+  width: 16px;
+}
+.hamburger:before, .hamburger:after,
+.habmurger--close:before,
+.habmurger--close:after {
+  position: absolute;
+  left: 0;
+  right: initial;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  content: '';
+}
+.hamburger:before,
+.habmurger--close:before {
+  top: -6px;
+}
+.hamburger:after,
+.habmurger--close:after {
+  bottom: -6px;
+}
+
+.hamburger--close {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.hamburger--open {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.hamburger--open:before, .hamburger--open:after {
+  width: 12px;
+}
+.hamburger--open:before {
+  -webkit-transform: rotate(45deg) translate(7px, -4px);
+          transform: rotate(45deg) translate(7px, -4px);
+}
+.hamburger--open:after {
+  -webkit-transform: rotate(-45deg) translate(7px, 4px);
+          transform: rotate(-45deg) translate(7px, 4px);
+}

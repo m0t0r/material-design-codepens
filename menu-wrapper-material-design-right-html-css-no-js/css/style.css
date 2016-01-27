@@ -1,0 +1,161 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900);
+body {
+  margin: 0;
+  background-color: #e2e2e2;
+ font-family: 'Roboto';
+  font-weight: 400; //*normal*//
+}
+.ancre {
+  display: none;
+}
+#hamburger {
+  margin: 22px 18px;  
+  top: 0;
+  box-sizing: border-box;
+  position: absolute;
+  height: 12px;
+  width: 20px;
+}
+#hamburger>div {
+  width: 20px;
+  height: 2px;
+  margin-top: 5px;
+  background-color: #727272;
+}
+#hamburger>div:after, #hamburger>div:before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #727272;
+}
+#hamburger>div:before {
+  margin-top: -5px;
+}
+#hamburger>div:after {
+  margin-top: 5px;
+}
+a#wrapper:target ~ #wrapper {
+  left: 0;
+  box-shadow: -4px 0 16px black;
+}
+a#wrapper:target ~ #close {
+  width: 100%;
+  cursor: default;
+}
+#wrapper {
+  transition: all 0.3s ease;
+  position: absolute;
+  width: 300px;
+  left: -380px;
+  top: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  overflow: hidden;
+  z-index: 5;
+}
+#wrapper>#image {
+  width: 100%;
+  height: 170px;
+  background-color: lightblue;
+}
+#right-ul {
+  overflow-y: scroll;
+  height: calc(100% - 170px);
+  box-shadow: 0 0 80px #878787;
+}
+#close {
+  position: absolute;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 4;
+}
+nav {
+  width: 100%;
+  background-color: #f5f5f5;
+  height: 56px;
+  box-shadow : 0 0 4px #878787;
+}
+ul {
+  padding: 20px 0 0 60px;
+  margin: 0;
+}
+li {
+  list-style: none;
+  line-height: 2.5em;
+  font-size: 15px;
+}
+#contenu {
+  width: 100%;
+  padding: 11px;
+  box-sizing: border-box;
+}
+main {
+  border-radius: 2px;
+  height: 50px;
+  width: 100%;
+  background-color: #fafafa;
+  box-shadow: 0 0 2px #878787;
+}
+#share {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 50px;
+  width: 50px;
+  background-color: orange;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #878787;
+  cursor: pointer;
+  z-index: 3;
+  background-image: url(http://www.zupimages.net/up/15/27/enby.png);
+  background-position: 46% center ;
+  background-size:  16px auto;
+  background-repeat: no-repeat;
+}
+input {
+  display: none;
+}
+#share ~ span {
+  z-index: 2;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  bottom: 25px;
+  right: 25px;
+  opacity: 0;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+input:checked ~ #share ~ span {
+  box-shadow: 0 0 8px #878787;
+  opacity: 1;
+}
+#fb {
+  background: #004A7F url(http://zupimages.net/up/15/27/det1.png) center no-repeat;
+}
+input:checked ~ #share ~ #fb {
+  bottom: 90px;
+}
+#tw {
+  background: #2AA9E0 url(http://zupimages.net/up/15/27/2o4n.png) center no-repeat;
+  background-size: 20px auto;
+}
+input:checked ~ #share ~ #tw {
+  bottom: 140px;
+}
+#gplus {
+  background: #DD4B39 url(http://zupimages.net/up/15/27/dil2.png) center no-repeat;
+  background-size: 20px auto;
+}
+input:checked ~ #share ~ #gplus {
+  bottom: 190px;
+}
+#email {
+  background: #a0a0a0 url(http://zupimages.net/up/15/27/6ptq.png) center no-repeat;
+  background-size: 20px auto;
+}
+input:checked ~ #share ~ #email {
+  bottom: 240px;
+}

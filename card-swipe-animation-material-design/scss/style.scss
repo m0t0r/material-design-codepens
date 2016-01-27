@@ -1,0 +1,246 @@
+// Some vars
+$animation-duration: 2.5s;
+
+$background-color:  #5978fb;
+$window-top:        #3c3e99;
+$window-bar:        #4c54a4;
+$window-content:    #fff;
+$window-background: #474baf;
+
+$button-color:      #dee0e4;
+$button-size: 32px;
+
+$window-width: 190px;
+$window-height: 320px;
+
+$header-height: 45px;
+
+$article-height: ($window-height - $header-height);
+
+main {
+  // we need to reserve some space fot this to work.
+  position: relative;
+  width: ($window-width * 3);
+  height: $window-height;
+}
+
+// Card
+ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: $window-width;
+  height: $window-height;
+  background-color: $window-background;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity, right;
+  
+  > * {
+    position: absolute;
+  }
+}
+
+li {
+  top: $header-height;
+  right: 0;
+  width: $window-width;
+  height: $article-height;
+  box-shadow: 0 2px 4px rgba(50,50,50,0.3);
+  background-color: $window-content;
+  //animation: article forwards $animation-duration infinite;
+  transform-origin: 50% 50%;
+  
+  &:nth-child(1) {
+    right: 100%;
+    z-index: 50;
+    transform: scale(.8);
+    opacity: .3;
+    animation: article-one forwards $animation-duration infinite;
+  }
+  
+  &:nth-child(2) {
+    right: 0;
+    z-index: 50;
+    animation: article-two forwards $animation-duration infinite;
+  }
+  
+  &:nth-child(3) {
+    right: 0;
+    z-index: 45;
+    transform-origin: 100% 50%;
+    transform: scale(.8);
+    animation: article-three forwards $animation-duration infinite;
+  }
+  
+  &:nth-child(4) {
+    right: 0;
+    z-index: 40px;
+    transform-origin: 100% 50%;
+    transform: scale(.7);
+    opacity: .3;
+    animation: article-four forwards $animation-duration infinite;
+  }
+}
+
+button {
+  position: absolute;
+  bottom: 45px;
+  right: ($window-width - 25 - $button-size);
+  
+  margin: 0;
+  padding: 0;
+  width: $button-size;
+  height: $button-size;
+  border: 0;
+  border-radius: 100%;
+  -webkit-appearance: none;
+  background-color: $button-color;
+  animation: button forwards $animation-duration infinite;
+}
+
+// Animations
+@keyframes button {
+  0%, 20% {
+    bottom: 45px;
+    right: ($window-width - 25 - $button-size);
+    transform: scale(1);
+  }
+  35% {
+    bottom: 90px;
+    right: ($window-width + 35px);
+    transform: scale(1);
+  }
+  50% {
+    bottom: 90px;
+    right: ($window-width + 35px);
+    transform: scale(.5625);
+  }
+  65%, 85% {
+    bottom: 90px;
+    right: (($window-width * 2) - 30px);
+    transform: scale(.5625);
+  }
+}
+
+@keyframes article-one {
+  0%, 50% {
+    right: 100%;
+    transform: scale(.8);
+    opacity: .3;
+  }
+  50% {
+    right: 100%;
+    transform: scale(.8);
+    opacity: .3;
+  }
+  65%, 100% {
+    transform: scale(.8);
+    right: 250%;
+    opacity: 0;
+  }
+}
+
+@keyframes article-two {
+  0%, 40% {
+    right: 0;
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    right: 0;
+    transform: scale(.8);
+    opacity: 1;
+  }
+  65%, 100% {
+    transform: scale(.8);
+    right: 100%;
+    opacity: .3;
+  }
+}
+
+@keyframes article-three {
+  0%, 40% {
+    right: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    right: 0;
+    transform: scale(0.7);
+  }
+  65%, 100% {
+    right: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes article-four {
+  0%, 40% {
+    right: 0;
+    transform-origin: 100% 50%;
+    transform: scale(.7);
+    opacity: .3;
+  }
+  50% {
+    right: -20px;
+    transform-origin: 100% 50%;
+    transform: scale(.6);
+    opacity: .3;
+  }
+  65%, 85% {
+    right: 0;
+    transform-origin: 100% 50%;
+    transform: scale(.7);
+    opacity: .3;
+  }
+}
+
+// Unimportant bits
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-color;
+}
+
+.credit {
+  display: none;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+  font-family: Avenir Next, Helvetica Neue, sans-serif;
+  
+  // The CodePen preview/thumbnail window is 300px in height
+  @media (min-height: 350px) {
+    display: block;
+  }
+  
+  a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(255,255,255,.3);
+    transition: border-color ease-out .15s;
+  
+    &:focus,
+    &:hover {
+      border-bottom-color: #fff;
+    }
+  }
+}

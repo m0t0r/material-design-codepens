@@ -1,0 +1,158 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+body {
+  background: #eee;
+  font: normal normal normal 16px/1 'Roboto';
+  color: #808080;
+}
+.wrapper {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  padding: 0;
+  background: #fff;
+  border-radius: 2px;
+  text-align: right;
+  margin: auto;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.22);
+  overflow: hidden;
+  z-index: 100;
+}
+.wrapper .content {
+  padding: 24px 24px 16px;
+}
+.wrapper .footer {
+  padding: 0 16px 8px;
+}
+.wrapper .ripple {
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  top: 100%;
+  left: 100%;
+  border-radius: 100%;
+  -webkit-transition: box-shadow 0.56s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 0.56s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+.wrapper .header {
+  display: block;
+  font-size: 20px;
+  text-align: left;
+  color: rgba(0,0,0,0.84);
+  margin: 0;
+  padding: 0;
+  -webkit-transition: color 0.56s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 0.56s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.wrapper ul {
+  display: block;
+  padding: 0;
+  width: 100%;
+}
+.wrapper ul li {
+  display: block;
+  padding: 16px 0 0;
+}
+.wrapper ul li p {
+  display: inline-block;
+  line-height: 24px;
+  margin: 0 20px 0;
+  vertical-align: middle;
+  -webkit-transition: color 0.56s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 0.56s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.wrapper.dark,
+.wrapper.dark .header {
+  color: rgba(255,255,255,0.84);
+}
+.wrapper.dark .ripple,
+.wrapper.dark .header .ripple {
+  box-shadow: inset 0 0 0 10px rgba(0,0,0,0.77), 0 0 0 400px rgba(0,0,0,0.77);
+}
+.wrapper.dark .button,
+.wrapper.dark .header .button {
+  color: rgba(255,255,255,0.84);
+}
+.wrapper.dark .switch,
+.wrapper.dark .header .switch {
+  background: rgba(255,255,255,0.3);
+}
+.wrapper.dark .switch::before,
+.wrapper.dark .header .switch::before {
+  background: #bdbdbd;
+}
+.wrapper.dark input:checked + .switch,
+.wrapper.dark .header input:checked + .switch {
+  background: rgba(128,203,196,0.5);
+}
+.wrapper.dark input:checked + .switch::before,
+.wrapper.dark .header input:checked + .switch::before {
+  background: #80cbc4;
+}
+.button {
+  display: inline-block;
+  position: relative;
+  padding: 0 12px;
+  height: 36px;
+  border: none;
+  margin: 8px 0;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(0,0,0,0.84);
+  background: none;
+  -webkit-transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1), color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1), color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+.button:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.28);
+}
+.button:active {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 16px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.26);
+  -webkit-transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
+  cursor: pointer;
+}
+.switch::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 24px;
+  height: 24px;
+  background: #fafafa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.28);
+  border-radius: 50%;
+  -webkit-transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.switch:active::before {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.28), 0 0 0 20px rgba(128,128,128,0.1);
+}
+input:checked + .switch {
+  background: rgba(0,150,136,0.5);
+}
+input:checked + .switch::before {
+  left: 20px;
+  background: #009688;
+}
+input:checked + .switch:active::before {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.28), 0 0 0 20px rgba(0,150,136,0.2);
+}

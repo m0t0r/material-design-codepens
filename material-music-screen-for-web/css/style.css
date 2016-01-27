@@ -1,0 +1,188 @@
+.trailer-wrapper {
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  margin: 40px auto;
+  font-family: "roboto-regular", arial;
+  box-shadow: 0px 0px 30px 10px rgba(202, 91, 49, 0.5);
+}
+.trailer-wrapper.mobile {
+  width: 360px;
+  min-width: 360px;
+}
+.trailer-wrapper.tablet {
+  width: 100%;
+  max-width: 540px;
+  min-width: 540px;
+}
+.trailer-wrapper.web {
+  width: 100%;
+  max-width: 900px;
+  min-width: 720px;
+}
+.trailer-wrapper .tr-header {
+  height: 100px;
+  background: #F44336;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.trailer-wrapper .tr-header .you-icon {
+  display: block;
+  margin-top: 14px;
+  height: 23px;
+  width: 26px;
+  float: left;
+  margin-left: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  text-align: center;
+  padding-top: 2px;
+}
+.trailer-wrapper .tr-header .you-icon img {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+.trailer-wrapper .tr-header .title {
+  font-size: 16px;
+  color: #fff;
+  float: left;
+  margin-top: 18px;
+  margin-left: 10px;
+}
+.trailer-wrapper .tr-header .tune {
+  display: block;
+  float: right;
+  margin-top: 15px;
+  margin-right: 20px;
+  opacity: 0.4;
+}
+.trailer-wrapper .tr-header .tune img {
+  width: 24x;
+  height: 24px;
+}
+.trailer-wrapper .tr-header .tabs {
+  width: 100%;
+  display: block;
+  float: left;
+  margin-top: 20px;
+  clear: both;
+}
+.trailer-wrapper .tr-header .tabs span {
+  width: 50%;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  padding-bottom: 15px;
+  color: #222;
+  opacity: 0.4;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.trailer-wrapper .tr-header .tabs span:hover {
+  color: #fff;
+  opacity: 1;
+}
+.trailer-wrapper .tr-header .tabs span.active {
+  color: #fff;
+  border-bottom: 4px solid #fff;
+  opacity: 1;
+}
+.trailer-wrapper .tr-coming-soon {
+  display: block;
+  clear: both;
+  width: 100%;
+  margin-top: 99px;
+}
+.trailer-wrapper .tr-coming-soon .music-cards {
+  width: 178px;
+  height: 180px;
+  display: inline-block;
+  position: relative;
+  float: left;
+  padding: 1px;
+}
+.trailer-wrapper .tr-coming-soon .music-cards img {
+  width: 100%;
+  opacity: 1;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .play-btn {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 17px;
+  right: 10px;
+  z-index: 2;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transform: scale(1, 1);
+  transition: 0.5s ease;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .play-btn img {
+  width: 20px;
+  padding: 11px;
+  opacity: 0.4;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .play-btn:hover {
+  transform: scale(1.1, 1.1);
+}
+.trailer-wrapper .tr-coming-soon .music-cards .play-btn:hover img {
+  opacity: 0.6;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .play-btn.color1 {
+  background: #F6A197;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .play-btn.color2 {
+  background: #FDA052;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .play-btn.color3 {
+  background: #F6B2C7;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .play-btn.color4 {
+  background: #476471;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .play-btn.color5 {
+  background: #61BF93;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .play-btn.color6 {
+  background: #E26263;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .disc {
+  position: absolute;
+  bottom: 0px;
+  height: 35px;
+  left: 0;
+  right: 0;
+  color: #fff;
+  font-size: 12px;
+  text-align: left;
+  margin: 1px;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .disc .music-title {
+  margin: 10px;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .disc.color1 {
+  background: #F6A197;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .disc.color2 {
+  background: #FDA052;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .disc.color3 {
+  background: #F6B2C7;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .disc.color4 {
+  background: #476471;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .disc.color5 {
+  background: #61BF93;
+}
+.trailer-wrapper .tr-coming-soon .music-cards .disc.color6 {
+  background: #E26263;
+}
