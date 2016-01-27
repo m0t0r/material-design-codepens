@@ -1,0 +1,165 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica", arial, sans-serif;
+  background: #f9f9f9;
+}
+  
+#container {
+  width: 320px;
+  height: 568px;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -284px;
+  margin-left: -160px;
+  overflow: hidden;
+  
+  &.details {
+    .list-view {
+      background: transparent;
+      transition: background 0.5s;
+      pointer-events: none;
+      li {
+        transition: transform 0.3s, opacity 0.2s;
+
+        &:not(.active) {
+          opacity: 0;
+        }
+        &.active {
+          transform: translate3d(0, 140px, 0);  
+          border-color: rgba(255,255,255,0);
+          transition: transform 0.3s, opacity 0.2s, border-color 0.2s;
+
+          &:hover {
+            background: none;
+          }
+        }
+      }
+    }
+    .details-view {
+      .back {
+        transform: scale(1);
+      }
+      .background {
+        transform: translate3d(0,-40px,0);
+        transition: transform 0.25s 0.05s;
+      }
+      li {
+        @for $i from 1 through 4 {
+          &:nth-child(#{$i}) {
+            transform: translate3d(0,0,0);
+          } 
+        }
+      }
+    }
+  }
+  
+  .list-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(255,255,255,1);
+    z-index: 1;
+    transition: background 0.3s 0.1s;
+
+
+    ul {
+      li {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 70px;
+        border-bottom-width: 1px;
+        border-style: solid;
+        border-color: #ddd;
+        transition: transform 0.3s, opacity 0.3s 0.3s, border-color 0.3s 0.3s;
+
+        .name {
+          -webkit-font-smoothing: antialiased;
+        }
+
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            transform: translate3d(0, ($i - 1) * 70px, 0);
+          }
+        }
+
+        &:hover {
+          background: #efefef;
+        }
+        .avatar {
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background: url('http://1.viki.io/a/ph/avatar_profile-acc6c5a5a9d35bd7d292dfd776cfec76.png?s=30x30&f=t&cb=1');
+          background-size: 100%;
+          margin: 10px 15px;
+        }
+      }
+    }
+  }
+
+  .details-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background: #fff;
+    
+    .background {
+      position: absolute;
+      top: 0;
+      height: 260px;
+      width: 100%;
+      background: url('http://mooxidesign.com/wp-content/uploads/2014/06/5-Polygon-Backgrounds.jpg');
+      transition: transform 0.25s;
+    }
+    
+    .back {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 30px;
+      height: 30px;
+      background: url('https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/back-alt-128.png');
+      background-size: 100%;
+      border: 0;
+      transform: scale(0.1);
+      transition: transform 0.15s;
+      z-index: 1;
+    }
+    ul {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 225px;
+    }
+    li {
+      i {
+        font-size: 1.2rem;
+        margin: 0 15px;
+      }
+      height: 70px;
+      line-height: 70px;
+      border-bottom: 1px solid #ddd;
+      
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          transform: translate3d(0, (($i * 5px) + 25px) , 0);
+	        transition: transform 0.3s (($i - 1) * 0.02s);
+        }
+      }
+    }
+  }
+}

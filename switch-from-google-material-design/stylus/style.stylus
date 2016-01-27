@@ -1,0 +1,183 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+
+$grid-step = 4
+
+$size = $grid-step * 10
+$height = $grid-step * 4
+$padding = $grid-step
+$label = $height + ($padding * 2)
+
+$animation = .28s cubic-bezier(0.4,0,.2,1)
+$animation-slow = .56s cubic-bezier(0.4,0,.2,1)
+
+$color-swatch = #009688
+$color-dark-swatch = #80CBC4
+
+$color-thumb-off = #fafafa
+$color-dark-thumb-off = #bdbdbd
+
+$color-track-off = rgba(black, 26%)
+$color-dark-track-off = rgba(white, 30%)
+
+$color-track-on = rgba($color-swatch, 50%)
+$color-dark-track-on = rgba($color-dark-swatch, 50%)
+
+//
+body
+  background #eee
+  font normal normal normal ($grid-step * 4)px/1 'Roboto'
+  color #808080
+
+
+.wrapper
+  display table
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+  width ($size * 7)px
+  padding 0
+  background #fff
+  border-radius 2px
+  text-align right
+  margin auto
+  box-shadow 0 19px 38px rgba(black, .3), 0 15px 12px rgba(black, .22)
+  overflow hidden
+  z-index 100
+
+  & .content
+    padding ($grid-step * 6)px ($grid-step * 6)px ($grid-step * 4)px
+
+  & .footer
+    padding  0 ($grid-step * 4)px ($grid-step * 2)px
+
+  & .ripple
+    display block
+    position absolute
+    width 4px
+    height 4px
+    top 100%
+    left 100%
+    border-radius 100%
+    transition box-shadow $animation-slow
+    z-index -1
+
+  & .header
+    display block
+    font-size ($size / 2)px
+    text-align left
+    color rgba(black, 84%)
+    margin 0
+    padding 0
+    transition color $animation-slow
+
+  & ul
+    display block
+    padding 0
+    width 100%
+
+    & li
+      display block
+      padding ($grid-step * 4)px 0 0
+
+      & p 
+        display inline-block
+        line-height ( $label )px
+        margin 0 ($size / 2)px 0 
+        vertical-align middle
+        transition color $animation-slow
+  
+  &.dark,
+  &.dark .header
+    color rgba(white, 84%)
+
+    & .ripple
+      box-shadow  inset 0 0 0 10px rgba(black, 77%),
+                        0 0 0 ($grid-step * 100)px rgba(black, 77%)
+    & .button 
+      color rgba(white, .84)
+
+    & .switch
+      background $color-dark-track-off
+
+      &::before
+        background $color-dark-thumb-off
+
+    & input:checked + .switch
+        background $color-dark-track-on
+
+        &::before
+          background $color-dark-swatch
+
+
+.button
+  display inline-block
+  position relative
+  padding 0 ($grid-step * 3)px
+  height ($grid-step * 9)px
+  border none
+  margin ($grid-step * 2)px 0
+  cursor pointer
+  border-radius 2px
+  font-size ($grid-step * 4)px
+  text-transform uppercase
+  text-decoration none
+  color rgba(black, .84)
+  background none
+  transition box-shadow $animation,
+             color $animation
+  outline none
+
+  &:hover
+    box-shadow 0 3px 6px rgba(black, .2),
+               0 3px 6px rgba(black, .28)
+  &:active
+    box-shadow 0 10px 20px rgba(black, .19),
+               0 6px 6px rgba(black, .23)
+
+
+.switch
+  display inline-block
+  position relative
+  width ( $size )px
+  height ( $height )px
+  border-radius ( $height / 2 )px
+  background $color-track-off
+  transition background $animation
+  vertical-align middle
+  cursor pointer
+
+  &::before
+    content ''
+    position absolute
+    top ( - $padding )px
+    left ( - $padding )px
+    width ($label)px
+    height ($label)px
+    background $color-thumb-off
+    box-shadow 0 2px ( $height / 2 )px rgba(0,0,0,.28)
+    border-radius 50%
+    transition left $animation, 
+               background $animation,
+               box-shadow $animation
+  
+  &:active::before
+    box-shadow 0 2px ( $height / 2 )px rgba(black, .28),
+               0 0 0 ($size / 2)px rgba(#808080, .1)
+      
+      
+input:checked + .switch
+  background $color-track-on
+  
+  &::before
+    left ( $size - $label + $padding )px
+    background $color-swatch 
+  
+  &:active::before
+    box-shadow 0 2px ( $height / 2 )px rgba(black, .28),
+               0 0 0 ($size / 2)px rgba($color-swatch, 0.2)  
+      
+      
+      

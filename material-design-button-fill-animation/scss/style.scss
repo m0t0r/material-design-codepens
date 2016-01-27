@@ -1,0 +1,122 @@
+$orange: #ff9800;
+$deep-orange: #f44336;
+$light-blue: #03A9F4;
+$light-green: #8BC34A;
+$teal: #009688;
+$grey: #9E9E9E;
+
+html {
+  position: relative;
+}
+
+body {
+  background: #fff;
+}
+
+.header {
+  position: relative;
+  background: $teal;
+  width: 100%;
+  height: 300px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  overflow: hidden;
+  z-index: 0;
+  transition: background 0s 0.5s;
+  
+  .fill {
+    width: 100vw;
+    height: 100vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 100;
+  }
+  
+  &.color-1 {
+    background: $orange;
+
+    .fill {
+      background: $orange;
+    }
+  }
+
+  &.color-2 {
+    background: $deep-orange;
+
+    .fill {
+      background: $deep-orange;
+    }
+  }
+
+  &.color-3 {
+    background: $light-blue;
+
+    .fill {
+      background: $light-blue;
+    }
+  }
+
+  &.color-4 {
+    background: $light-green;
+
+    .fill {
+      background: $light-green;
+    }
+  }
+}
+
+#act1 {
+  background: $orange;
+  transform: translateX(-100px * 1.5);
+}
+
+#act2 {
+  background: $deep-orange;
+  transform: translateX(-100px *0.5);
+}
+
+#act3 {
+  background: $light-blue;
+  transform: translateX(100px *0.5);
+}
+
+#act4 {
+  background: $light-green;
+  transform: translateX(100px *1.5);
+}
+
+.action {
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  margin-left: -60px;
+  margin-top: -30px;
+  height: 60px;
+  width: 60px;
+  border: 0;
+  outline: 0;
+  background: $grey;
+  color: #fff;
+  box-shadow: 0;
+  border-radius: 100%;
+  text-align: center;
+  transition: top 0.3s,
+              transform 0.2s,
+              opacity 0.2s 0.3s,
+              box-shadow 0.2s;
+  
+  &:before {
+    //content: '+';
+    position: relative;
+    top: -2px;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 60px;
+  }
+  
+  &.activated {
+    //box-shadow: 0 3px 10px rgba(0,0,0,0.23),0 3px 10px rgba(0,0,0,0.16);
+  }
+}

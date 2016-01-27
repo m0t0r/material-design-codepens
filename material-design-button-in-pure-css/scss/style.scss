@@ -1,0 +1,144 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+@import 'compass';
+@import 'compass/css3';
+@import 'compass/reset';
+
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+@function get($map, $keys...) {
+  @each $key in $keys {
+		$map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+$shadow: 0 3px 1px -2px rgba(0,0,0,.14),0 2px 2px 0 rgba(0,0,0,.098),0 1px 5px 0 rgba(0,0,0,.084);
+$button: (
+	'size': 56px,
+	'position': 10%,
+	'transition': all .34s ease-in-out,
+	'color': (
+		'brand': #1976D2,
+		'accent': #2196F3,
+		'light': #ffffff,
+		'dark': #000000
+	)
+);
+
+%center-position {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	@include transform(translate(-50%, -50%));
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	@include box-sizing(border-box);
+	@include font-smoothing(on);
+	@include user-select(none);
+	&:before, &:after {
+		@extend *;
+	}
+}
+
+h1 {
+  @extend %center-position;
+	padding: 0 16px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	text-align: center;
+	line-height: 140%;
+	color: rgba(black, .54);
+  
+  small {
+    display: block;
+    font-size: 16px;
+  }
+}
+
+.button {
+  position: absolute;
+	bottom: get($button, position);
+	right: get($button, position);
+	width: get($button, size);
+	height: get($button, size);
+
+	&-checkbox {
+		display: none;
+	}
+
+	&-trigger {
+		display: block;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		background-color: get($button, color, accent);
+		@include transition(get($button, transition));
+		@include border-radius(50%);
+		@include box-shadow($shadow);
+	}
+
+	.material-icons {
+		@extend %center-position;
+		z-index: 5;
+		color: get($button, color, light);
+		@include transform(translate(-50%, -50%) rotate(0));
+		@include transition(get($button, transition));
+	}
+
+	&-option {
+		@extend %center-position;
+		z-index: -1;
+		width: 80%;
+		height: 80%;
+		cursor: pointer;
+		background-color: get($button, color, light);
+		@include border-radius(50%);
+		@include transition(get($button, transition));
+		@include box-shadow($shadow);
+		&:hover {
+			background-color: get($button, color, accent);
+			.material-icons {
+				color: get($button, color, light);
+			}
+		}
+		&:active {
+			background-color: get($button, color, brand);
+		}
+		.material-icons {
+			color: rgba(get($button, color, dark), .54);
+			@include transition(all .3s ease);
+		}
+	}
+
+	&-checkbox:checked ~ .button {
+		&-trigger > .material-icons {
+			@include transform(translate(-50%, -50%) rotate(225deg));
+		}
+
+		&-option {
+			&:nth-of-type(1) {
+				@include transform(translate(-50%, -440%));
+			}
+			&:nth-of-type(2) {
+				@include transform(translate(-50%, -320%));
+			}
+			&:nth-of-type(3) {
+				@include transform(translate(-50%, -200%));
+			}
+		}
+	}
+}

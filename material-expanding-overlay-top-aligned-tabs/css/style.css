@@ -1,0 +1,327 @@
+/*------------------------------------------
+- GENERAL 
+------------------------------------------*/
+* {
+  box-sizing: border-box;
+  
+}
+body {
+  font-family: "Roboto";
+  font-weight: 200;
+  text-align: center;
+}
+
+#container {
+  height: 80vh;
+  width: 90vw;
+  top: 10vh;
+  left: 5vw;
+  position: relative;
+  visibility: visible;
+}
+
+/*------------------------------------------
+- INITIAL CONTENT // displays before block is selected
+------------------------------------------*/
+initial {
+  position: absolute;
+  z-index: 0;
+  padding: 3vh 5vw;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #fff;
+}
+initial h1 {
+  margin: 0;
+  font-weight: 200;
+  color: #38c5b9;
+}
+initial h1 a {
+  font-size: 8vmin;
+}
+initial p {
+  font-weight: 100;
+  font-size: 4vmin;
+  max-width: 50vw;
+  margin: 7px auto;
+}
+initial a {
+  text-decoration: none;
+  color: #2093d1;
+  font-size: 4vmin;
+}
+/*------------------------------------------
+- BLOCKS // alignment, size
+------------------------------------------*/
+.blocks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100.05%;
+  height: 100.5%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.blocks__block {
+  will-change: transform;
+  position: relative;
+  height: 15%;
+  width: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.blocks__block:hover {opacity:.9;}
+.blocks__block.active {
+  z-index: 2;
+}
+/*------------------------------------------
+- BLOCKS // individual block background color & transform origin 
+------------------------------------------*/
+.blocks__block:nth-child(1) {background: #E1F5FE; -webkit-transform-origin: 0% 0%; transform-origin: 0% 0%;}
+.blocks__block:nth-child(2) {background: #81D4FA; -webkit-transform-origin: 20% 0%; transform-origin: 20% 0%;}
+.blocks__block:nth-child(3) {background: #29B6F6; -webkit-transform-origin: 40% 0%; transform-origin: 40% 0%;}
+.blocks__block:nth-child(4) {background: #03A9F4; -webkit-transform-origin: 60% 0%; transform-origin: 60% 0%;}
+.blocks__block:nth-child(5) {background: #0288D1; -webkit-transform-origin: 80% 0%; transform-origin: 80% 0%;}
+.blocks__block:nth-child(6) {background:#01579B; -webkit-transform-origin: 100% 0%; transform-origin: 100% 0%;}
+/*------------------------------------------
+- BLOCK TITLE // alignment
+------------------------------------------*/
+.blocks-names {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 3.5vmin;
+  letter-spacing: 2px;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+.blocks-names .blocks__name {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-align-content: space-between;
+      -ms-flex-line-pack: justify;
+          align-content: space-between;
+  height: 15%;
+
+}
+.blocks-names .blocks__name:hover {
+  background: rgba(255,255,255,.25);
+  -webkit-transition: all .2s ease-out; 
+          transition: all .2s ease-out;}
+/*------------------------------------------
+- BLOCK TITLE 
+------------------------------------------*/
+.blocks-names .blocks__name:nth-child(-n+3){}
+.blocks-names .blocks__name:nth-child(n+4):nth-child(-n+6) {color: #fff;}
+     /* //if you want individual control
+    .blocks-names .blocks__name:nth-child(1) {}
+    .blocks-names .blocks__name:nth-child(2) {}
+    .blocks-names .blocks__name:nth-child(3) {}
+    .blocks-names .blocks__name:nth-child(4) {color: #fff;}
+    .blocks-names .blocks__name:nth-child(5) {color: #fff;}
+    .blocks-names .blocks__name:nth-child(6) {color: #fff;}
+    */
+/*------------------------------------------
+- BLOCK CONTENT // positioning & transform 
+------------------------------------------*/
+.blocks-content {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+.blocks-content__content {
+  will-change: transform, opacity;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  bottom: 7.5%;
+  left: 0;
+  right: 0;
+  padding: 5%;
+  font-size: 4vmin;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition: all 0.3s 0.2s ease-out;
+  transition: all 0.3s 0.2s ease-out;
+}
+.blocks-content__content.active {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  visibility: visible;
+}
+/*------------------------------------------
+- BLOCK CONTENT // individual block control
+------------------------------------------*/
+.blocks-content .blocks-content__content:nth-child(-n+3){}
+.blocks-content .blocks-content__content:nth-child(n+4):nth-child(-n+6) {color: #fff;}
+    /* //if you want individual control
+    .blocks-content .blocks-content__content:nth-child(1) {}
+    .blocks-content .blocks-content__content:nth-child(2) {}
+    .blocks-content .blocks-content__content:nth-child(3) {}
+    .blocks-content .blocks-content__content:nth-child(4) {color: #fff;}
+    .blocks-content .blocks-content__content:nth-child(5) {color: #fff;}
+    .blocks-content .blocks-content__content:nth-child(6) {color: #fff;}
+    */
+/*------------------------------------------
+- BLOCK CONTENT // close 'button' 
+------------------------------------------*/
+.blocks-content .blocks__content-close-dark {
+  position: fixed;
+  background: transparent;
+  width: 7.5vmin;
+  height: 7.5vmin;
+  line-height: 7.5vmin;
+  right: 49%;
+  bottom: 5%;
+  font-size: 5vmin;
+  cursor: pointer;
+  outline: none;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.blocks-content .blocks__content-close-light {
+  position: fixed;
+  background: transparent;
+  width: 7.5vmin;
+  height: 7.5vmin;
+  line-height: 7.5vmin;
+  right: 49%;
+  bottom: 5%;
+  font-size: 5vmin;
+  cursor: pointer;
+  outline: none;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.blocks-content .blocks__content-close-dark:hover {
+  background: rgba(0,0,0,.25);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.blocks-content .blocks__content-close-light:hover {
+  background: rgba(255,255,255,.25);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+/*------------------------------------------
+- BLOCK CONTENT 
+------------------------------------------*/
+.blocks-content h2 {
+  padding: 4vmin;
+  font-weight: 200;
+  letter-spacing: 6px;
+}
+.blocks-content p {
+  font-size: 1em;
+  line-height: 1.75;
+  width: 90%;
+  left: 5%;
+}
+
+/*------------------------------------------
+- MD PAPER-SHADOW ATTRIBUTES - *MaterializeCSS Spec*
+------------------------------------------*/ 
+.z-depth-1, .blocks-content {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+.z-depth-1-half, .container {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
+.z-depth-2, .blocks__name:hover {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+.z-depth-3, .blocks__block.active {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); }
+.z-depth-4 {
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21); }
+.z-depth-5 {
+  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22); }

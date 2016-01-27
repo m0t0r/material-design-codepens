@@ -1,0 +1,91 @@
+@import url(http://fonts.googleapis.com/css?family=Lato);
+body {
+  background-color: #e6e6e9;
+  font-family: 'Lato', sans-serif;
+}
+.wrapper {
+  width: 400px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+.wrapper.active .item {
+  background-color: #f0f0f0;
+}
+.wrapper.active .item.active {
+  background-color: #0083F5;
+  color: white;
+}
+.item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+  width: 400px;
+  height: 50px;
+  transition-duration: 0.5s;
+  position: relative;
+  padding-top: 30px;
+  text-align: center;
+}
+.item:hover {
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+.item .close {
+  display: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: white;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  margin-top: -15px;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2);
+}
+.item .close:hover {
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+.item .close:hover:before {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+.item .close:hover:after {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+.item .close:before,
+.item .close:after {
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #0083F5;
+  position: absolute;
+  content: "";
+  top: 14px;
+  left: 7px;
+  transition-duration: 0.33s;
+}
+.item .close:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.item .close:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.item.last {
+  border-bottom: none;
+}
+.item.margin {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.item.active {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+  color: black;
+  transition-delay: 0.5s;
+  transform: scale(1.1, 1.1);
+  -webkit-transition-delay: 0.5s;
+  -webkit-transform: scale(1.1, 1.1);
+}

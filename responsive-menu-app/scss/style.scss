@@ -1,0 +1,357 @@
+$animation-time: 0.4s;
+$colors:
+  #ffffff, #F6EC82, #DFB361,
+  #D6795E, #A75377, #3B3B56;
+
+body {
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+#info {
+  display: none;
+}
+
+/* the app - a beer menu / ordering app */
+#menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  /* note: the translateZ(0) enables hardware accel */
+  /* without it, there is a weird gap between panels */
+  transform: translate(-50%, -50%) translateZ(0);
+  height: 80vh;
+  width: (80vh / 1.5);
+  border-radius: 2vh;
+  overflow: hidden;
+  box-shadow:
+    4vh 7vh 14vh -6vh rgba(0,0,0,0.35),
+    -4vh 7vh 14vh -6vh rgba(0,0,0,0.35);
+}
+
+/* the actual order form (not initially visible) */
+#order {
+  display: none;
+  height: 20vh;
+  input, select, option {
+    outline: none !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  #choice {
+    display: none;
+  }
+  label[for="quantity"] {
+    position: absolute;
+    width: 100%;
+    top: 7.5vh;
+    text-align: center;
+    font-size: 10vh;
+    line-height: 10vh;
+    z-index: 15;
+    font-weight: 100;
+  }
+  #quantity {
+    position: absolute;
+    top: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 15;
+    width: 30vh;
+    &::-ms-track {
+      width: 30vh;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 3vh;
+      height: 4.5vh;
+      border-radius: 1.25vh;
+      margin-top: -2.25vh;
+      box-shadow: 0.25vh 0.25vh 1vh rgba(#000, 0.25);
+    }
+    &::-moz-range-thumb {
+      width: 3vh;
+      height: 4.5vh;
+      border: none;
+      border-radius: 1.25vh;
+      box-shadow: 0.25vh 0.25vh 1vh rgba(#000, 0.25);
+    }
+    &::-ms-thumb {
+      width: 3vh;
+      height: 4.5vh;
+      border-radius: 1.25vh;
+      box-shadow: 0.25vh 0.25vh 1vh rgba(#000, 0.25);
+    }
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 0.5vh;
+      border-radius: 0.25vh;
+      margin-top: -0.25vh;
+    }
+  }
+  #table {
+    position: absolute;
+    border: none;
+    background: none;
+    font-size: 2.5vh;
+    line-height: 2.5vh;
+    height: 2.5vh;
+    left: 5vh;
+    bottom: 11.25vh;
+    option {
+      background: transparent !important;
+    }
+  }
+  #back, #submit {
+    position: absolute;
+    border: none;
+    background: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  #submit {
+    right: 5vh;
+    bottom: 11.25vh;
+    font-size: 2.5vh;
+  }
+  #back {
+    right: 5vh;
+    bottom: 6vh;
+    font-size: 2.5vh;
+  }
+  
+  @for $i from 1 through 4 {
+    &.opt#{$i} {
+      background:
+        radial-gradient(circle at top left,
+        nth($colors, $i+2), nth($colors, $i+2),
+        darken(nth($colors, $i+2), 8%));
+      #quantity::-webkit-slider-thumb {
+        background:
+          linear-gradient(-45deg,
+          darken(nth($colors, ($i+2)%6+1), 15%),
+          nth($colors, ($i+2)%6+1));
+      }
+      #quantity::-moz-range-thumb {
+        background:
+          linear-gradient(-45deg,
+          darken(nth($colors, ($i+2)%6+1), 15%),
+          nth($colors, ($i+2)%6+1));
+      }
+      #quantity::-ms-thumb {
+        background:
+          linear-gradient(-45deg,
+          darken(nth($colors, ($i+2)%6+1), 15%),
+          nth($colors, ($i+2)%6+1));
+      }
+      #quantity::-webkit-slider-runnable-track {
+        background: nth($colors, ($i+4)%6+1);
+      }
+      #quantity::-moz-range-track {
+        background: nth($colors, ($i+4)%6+1);
+      }
+      #quantity::-ms-track {
+        background:
+          linear-gradient(to bottom,
+          transparent 0%, transparent 55%,
+          nth($colors, ($i+4)%6+1) 55%,
+          nth($colors, ($i+4)%6+1) 65%,
+          transparent 65%, transparent 100%);
+      }
+      #table {
+        color: nth($colors, $i+1);
+        option {
+          color: nth($colors, ($i+4)%6+1);
+        }
+      }
+      #back, #submit, label {
+        color: nth($colors, ($i+4)%6+1);
+      }
+    }
+  }
+}
+
+/* info panels for each beer */
+.panel {
+  position: relative;
+  flex-grow: 1;
+  transition: all $animation-time ease;
+  transition-delay: 0s;
+  .price {
+    font-size: 0;
+  }
+  .name, .type, .price, .abv {
+    position: absolute;
+    transition: all $animation-time ease;
+    transition-delay: 0;
+  }
+  .name {
+    left: 5vh;
+    top: 50%;
+    margin-top: -2.5vh;
+    font-size: 5vh;
+    line-height: 5vh;
+    font-weight: 300;
+  }
+  .type {
+    left: 5vh;
+    top: 50%;
+    margin-top: 2.5vh;
+    font-size: 0;
+    line-height: 2.5vh;
+    font-weight: 100;
+  }
+  .price {
+    top: 50%;
+    left: 5vh;
+    margin-top: 20vh;
+    line-height: 2.5vh;
+    font-weight: 500;
+  }
+  .abv {
+    top: 50%;
+    right: 5vh;
+    font-size: 2.5vh;
+    line-height: 2.5vh;
+    font-weight: 500;
+  }
+  /* the icon for this beer (initially invisible) */
+  svg {
+    position: absolute;
+    left: 1vh;
+    top: 50%;
+    margin-top: -10vh;
+    height: 20vh;
+    fill: none;
+    stroke-width: 2%;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    opacity: 0;
+    transition: all $animation-time ease;
+    transition-delay: 0s;
+  }
+  /* each panel has its own color scheme */
+  @for $i from 1 through 4 {
+    &:nth-of-type(#{$i}) {
+      z-index: 10 - $i;
+      background:
+        radial-gradient(circle at top left,
+        nth($colors, $i+1), nth($colors, $i+1),
+        darken(nth($colors, $i+1), 8%));
+      filter: drop-shadow(0 0 1vh darken(nth($colors, $i+2), 20%));
+      h1, h2, h3 {
+        color: nth($colors, $i+2);
+      }
+      .price {
+        color: nth($colors, $i+2);
+      }
+      .abv {
+        color: nth($colors, $i);
+      }
+      svg {
+        stroke: nth($colors, $i);
+      }
+    }
+  }
+}
+
+/* panels get larger and show more info when you hover over them */
+.panel:hover {
+  flex-grow: 2;
+  .name {
+    left: 15vh;
+    margin-top: -3.75vh;
+  }
+  .type {
+    left: 15vh;
+    margin-top: 1.75vh;
+    font-size: 2.5vh;
+  }
+  .abv {
+    margin-top: 1.25vh;
+  }
+  svg {
+    opacity: 1;
+    transition-delay: $animation-time;
+  }
+}
+
+/* when you click on a panel, the others are hidden */
+.panel.hidden {
+  flex-grow: 0.0000000001;
+  * {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* when you click on a panel, it becomes active */
+.panel.active {
+  flex-grow: 1;
+  transition-delay: 0s;
+  svg {
+    transition-delay: 0s;
+    height: 15vh;
+    margin-top: 0;
+    left: 2.5vh;
+    opacity: 1;
+  }
+  .name, .type, .abv, .price {
+    transition-delay: 0s;
+  }
+  .name {
+    left: 15vh;
+    margin-top: 5vh;
+    font-size: 7.5vh;
+    font-weight: 100;
+  }
+  .type {
+    font-size: 0;
+  }
+  .abv {
+    margin-top: 20vh;
+  }
+  .price {
+    font-size: 2.5vh;
+  }
+  @for $i from 1 through 4 {
+    &:nth-of-type(#{$i}) {
+      .name, .abv {
+        color: nth($colors, ($i+4)%6+1);
+      }
+      svg {
+        stroke: nth($colors, ($i+2)%6+1);
+      }
+    }
+  }
+}
+
+@media (orientation: landscape) {
+  /* put a blurred image in the background, just for pretty presentation */
+  body::before {
+    content: '';
+    display: block;
+    height: 100vh;
+    width: 100%;
+    background: url('http://lorempixel.com/640/480/food') center/cover;
+    filter: blur(5vh);
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+}
+
+@media (orientation: portrait) {
+  #menu {
+    border-radius: 0;
+    width: 100%;
+    height: 100vh;
+  }
+}

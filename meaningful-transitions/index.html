@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="show-contacts">
+  <head>
+    <meta charset="UTF-8">
+    <title>Meaningful Transitions</title>
+    
+    
+    
+    <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css'>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <!--
+	Based on the contacts video from Meaningful Transitions
+	https://www.google.com/design/spec/animation/meaningful-transitions.html#
+-->
+
+<!-- Centered wrapper -->
+<div class="app-wrapper">
+  <!-- Header for the 'app' -->
+  <header class="app-bar">
+    <button id="menuToggle" class="app-bar-button menu-toggle menu-is-closed"><i class="fa fa-bars"></i></button>
+    <h1 id="appHeadline" class="app-headline">All Contacts</h1>
+    <button id="sortToggle" class="app-bar-button sort-toggle"><i class="fa fa-sort-alpha-asc"></i></button>
+  </header>
+  <!-- END 'app' Header -->
+  
+  <!-- Table of contacts -->
+  <div class="app-body">
+   
+    <!-- List of contacts, these are built dynamicly by javascript on page load -->
+    <table id="contactList" class="contact-list">
+      <tbody>
+      </tbody>
+    </table>
+    <!-- END List of contacts -->
+    
+    <!-- Contact Info (Details), hidden by default, visible when a contact is selected -->
+    <!-- This info is not contact item specific so it is not loaded dynamically -->
+    <table id="contactInfo" class="contact-info">
+      <tbody>
+        <tr id="contactUsername" class="contact-info-item"><td class="contact-info-icon"><i class="fa fa-comment-o"></i></td><td class="contact-info-detail">joedoe</td></tr>
+        <tr id="contactEmail" class="contact-info-item"><td class="contact-info-icon"><i class="fa fa-envelope-o"></i></td><td class="contact-info-detail">john.smith@email.com</td></tr>
+        <tr id="contactHomeNumber" class="contact-info-item"><td class="contact-info-icon"><i class="fa fa-phone"></i></td><td class="contact-info-detail">(555) 987-1234</td></tr>
+        <tr id="contactWorkNumber" class="contact-info-item"><td class="contact-info-icon"><i class="fa fa-building-o"></i></td><td class="contact-info-detail">(555) 987-1234</td></tr>
+        <tr id="contactAddress" class="contact-info-item"><td class="contact-info-icon"><i class="fa fa-home"></i></td><td class="contact-info-detail">123 Elm Street</td></tr>
+      </tbody>
+    </table>
+    <!-- End Contact Info (Details) -->
+  </div>
+</div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.1.1/randomColor.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>

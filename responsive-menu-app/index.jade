@@ -1,0 +1,44 @@
+#menu
+  .panel
+    [[[http://codepen.io/wbarlow/pen/Pqdxdd]]]
+    h1.name Leffe
+    h2.type Blonde
+    span.price $4.50
+    span.abv 6.6%
+  .panel
+    [[[http://codepen.io/wbarlow/pen/Pqdxdd]]]
+    h1.name Paulaner
+    h2.type Ale
+    span.price $5
+    span.abv 5.5%
+  .panel
+    [[[http://codepen.io/wbarlow/pen/PqdXLw]]]
+    h1.name Heineken
+    h2.type Lager
+    span.price $4.50
+    span.abv 5%
+  .panel
+    [[[http://codepen.io/wbarlow/pen/Pqdxdd]]]
+    h1.name Tuborg
+    h2.type Stout
+    span.price $4
+    span.abv 4.6%
+  form#order
+    select#choice(name="choice")
+      option(value="leffe") Leffe
+      option(value="paulaner") Paulaner
+      option(value="heineken") Heineken
+      option(value="tuborg") Tuborg
+    label(for="quantity") 1
+    input#quantity(type="range" min="0.5" max="4" value="1" step="0.5" name="quantity")
+    select#table(name="table")
+      option(value="1") Table 1
+      option(value="2") Table 2
+      option(value="3") Table 3
+      option(value="4") Table 4
+      option(value="5") Table 5
+      option(value="6") Table 6
+      option(value="7") Table 7
+      option(value="8" selected) Table 8
+    input#back(type="reset" value="Cancel")
+    input#submit(type="submit" value="Order")

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Responsive Menu App</title>
+    
+    
+    <link rel="stylesheet" href="css/reset.css">
+
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500'>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <!-- Included from http://codepen.io/wbarlow/pen/Pqdxdd -->     <!-- Included from http://codepen.io/wbarlow/pen/PqdXLw -->     <!-- Included from http://codepen.io/wbarlow/pen/Pqdxdd -->     <!-- Included from http://codepen.io/wbarlow/pen/Pqdxdd -->     
+<div id="menu">
+  <div class="panel"><svg
+     version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     viewbox="0 0 500 750">
+  <path d="
+    M 150 140
+    c 25 -25 50 -30 100 -30
+    c 50 0 70 5 100 30
+    c -25 25 -50 30 -100 30
+    c -50 0 -70 -5 -100 -30
+  " />
+  <path d="
+    M 350 140
+    c 15 15 15 75 10 100
+    c 0 70 -50 170 -50 270
+    c 0 60 20 50 20 100
+    c 0 30 -50 30 -80 30
+    c -30 0 -80 0 -80 -30
+    c 0 -50 20 -40 20 -100
+    c 0 -170 -50 -200 -50 -270
+    c -5 -25 -5 -85 10 -100
+  " />
+</svg>
+    <h1 class="name">Leffe</h1>
+    <h2 class="type">Blonde</h2><span class="price">$4.50</span><span class="abv">6.6%</span>
+  </div>
+  <div class="panel"><svg
+     version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     viewbox="0 0 500 750">
+  <path d="
+    M 150 140
+    c 25 -25 50 -30 100 -30
+    c 50 0 70 5 100 30
+    c -25 25 -50 30 -100 30
+    c -50 0 -70 -5 -100 -30
+  " />
+  <path d="
+    M 350 140
+    c 15 15 15 75 10 100
+    c 0 70 -50 170 -50 270
+    c 0 60 20 50 20 100
+    c 0 30 -50 30 -80 30
+    c -30 0 -80 0 -80 -30
+    c 0 -50 20 -40 20 -100
+    c 0 -170 -50 -200 -50 -270
+    c -5 -25 -5 -85 10 -100
+  " />
+</svg>
+    <h1 class="name">Paulaner</h1>
+    <h2 class="type">Ale</h2><span class="price">$5</span><span class="abv">5.5%</span>
+  </div>
+  <div class="panel"><svg
+     version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     viewbox="0 0 500 750">
+  <path d="
+    M 130 155
+    c 25 -25 50 -30 120 -30
+    c 50 0 70 5 120 30
+    c -25 25 -50 30 -120 30
+    c -50 0 -70 -5 -120 -30
+  " />
+  <path d="
+    M 370 155
+    c 0 50 -40 300 -40 370
+    c 0 0 0 0 5 80
+    c 0 0 0 15 -85 15
+    c -85 0 -85 -15 -85 -15
+    c 0 0 0 0 5 -80
+    c 0 -70 -40 -320 -40 -370
+  " />
+</svg>
+    <h1 class="name">Heineken</h1>
+    <h2 class="type">Lager</h2><span class="price">$4.50</span><span class="abv">5%</span>
+  </div>
+  <div class="panel"><svg
+     version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     viewbox="0 0 500 750">
+  <path d="
+    M 150 140
+    c 25 -25 50 -30 100 -30
+    c 50 0 70 5 100 30
+    c -25 25 -50 30 -100 30
+    c -50 0 -70 -5 -100 -30
+  " />
+  <path d="
+    M 350 140
+    c 15 15 15 75 10 100
+    c 0 70 -50 170 -50 270
+    c 0 60 20 50 20 100
+    c 0 30 -50 30 -80 30
+    c -30 0 -80 0 -80 -30
+    c 0 -50 20 -40 20 -100
+    c 0 -170 -50 -200 -50 -270
+    c -5 -25 -5 -85 10 -100
+  " />
+</svg>
+    <h1 class="name">Tuborg</h1>
+    <h2 class="type">Stout</h2><span class="price">$4</span><span class="abv">4.6%</span>
+  </div>
+  <form id="order">
+    <select id="choice" name="choice">
+      <option value="leffe">Leffe</option>
+      <option value="paulaner">Paulaner</option>
+      <option value="heineken">Heineken</option>
+      <option value="tuborg">Tuborg</option>
+    </select>
+    <label for="quantity">1</label>
+    <input id="quantity" type="range" min="0.5" max="4" value="1" step="0.5" name="quantity"/>
+    <select id="table" name="table">
+      <option value="1">Table 1</option>
+      <option value="2">Table 2</option>
+      <option value="3">Table 3</option>
+      <option value="4">Table 4</option>
+      <option value="5">Table 5</option>
+      <option value="6">Table 6</option>
+      <option value="7">Table 7</option>
+      <option value="8" selected="selected">Table 8</option>
+    </select>
+    <input id="back" type="reset" value="Cancel"/>
+    <input id="submit" type="submit" value="Order"/>
+  </form>
+</div>     <!-- End include from http://codepen.io/wbarlow/pen/Pqdxdd -->     <!-- End include from http://codepen.io/wbarlow/pen/Pqdxdd -->     <!-- End include from http://codepen.io/wbarlow/pen/PqdXLw -->     <!-- End include from http://codepen.io/wbarlow/pen/Pqdxdd -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>

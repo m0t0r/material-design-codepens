@@ -1,0 +1,305 @@
+/*@import '_normalize.scss';*/
+html {
+  font-size: 18px;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background: url(http://www.transparenttextures.com/patterns/egg-shell.png) repeat left top, linear-gradient(to bottom, #7d92d0, #576a9e);
+}
+
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+}
+
+.card {
+  box-shadow: 0 5px 10px rgba(34, 34, 34, 0.5);
+  -webkit-transform: skew(24deg, -10deg);
+  -moz-transform: skew(24deg, -10deg);
+  -o-transform: skew(24deg, -10deg);
+  -ms-transform: skew(24deg, -10deg);
+  transform: skew(24deg, -10deg);
+  position: relative;
+  margin: 10% auto;
+  background: url(http://www.transparenttextures.com/patterns/p6.png) repeat left top, #2a8a98;
+  width: 250px;
+  height: 400px;
+}
+
+.statbar {
+  position: relative;
+  margin: 10% auto;
+  background: url(http://www.transparenttextures.com/patterns/p6.png) repeat left top, #F3C50D;
+  width: 250px;
+  height: 20px;
+}
+
+.yuri_btn {
+  position: absolute;
+  border-radius: 100%;
+  width: 50px;
+  height: 46px;
+  box-shadow: 0 2px 4px rgba(34, 34, 34, 0.5);
+  bottom: 0;
+  margin: 16px;
+  background: url(http://www.transparenttextures.com/patterns/otis-redding.png) repeat left top, #f5cd8e;
+}
+
+.plus_btn {
+  position: absolute;
+  border-radius: 100%;
+  width: 50px;
+  height: 46px;
+  box-shadow: 0 2px 4px rgba(34, 34, 34, 0.5);
+  bottom: 0;
+  margin: 16px;
+  left: 82px;
+  background: url(http://www.transparenttextures.com/patterns/otis-redding.png) repeat left top, #f04e3d;
+}
+
+.burger_btn {
+  position: absolute;
+  border-radius: 100%;
+  width: 50px;
+  height: 46px;
+  box-shadow: 0 2px 4px rgba(34, 34, 34, 0.5);
+  bottom: 0;
+  margin: 16px;
+  right: 0;
+  background: url(http://www.transparenttextures.com/patterns/otis-redding.png) repeat left top, #fff468;
+}
+
+.top_burger {
+  transition: 0.2s ease-out;
+  top: 8%;
+  left: 38%;
+  box-shadow: -40px 50px 40px rgba(34, 34, 34, 0.4);
+  position: absolute;
+  overflow: hidden;
+  transform: perspective(150px) rotateX(20deg);
+  width: 160px;
+  height: 80px;
+  border-radius: 100px/80px 80px 25px  25px;
+  z-index: 100;
+  background: url(http://www.transparenttextures.com/patterns/egg-shell.png) repeat left top, #efb814;
+}
+
+.meat {
+  transition: 0.2s ease-out;
+  top: 30%;
+  left: 26%;
+  box-shadow: -25px 36px 30px rgba(34, 34, 34, 0.45);
+  position: absolute;
+  width: 170px;
+  height: 70px;
+  border-radius: 90px/30px;
+  background: url(http://www.transparenttextures.com/patterns/iron-grip.png) repeat left top, #8a5e39;
+  z-index: 99;
+}
+
+.meat_shadow {
+  width: 155px;
+  height: 40px;
+  margin: 2px auto;
+  border-radius: 80px/20px;
+  background: url(http://www.transparenttextures.com/patterns/iron-grip.png) repeat left top, #6F4B2C;
+  z-index: 99;
+}
+
+.bottom_burger {
+  transition: 0.2s ease-out;
+  top: 50%;
+  left: 20%;
+  box-shadow: -8px 10px 10px rgba(34, 34, 34, 0.4);
+  position: absolute;
+  transform: perspective(150px) rotateX(-20deg);
+  width: 160px;
+  height: 80px;
+  border-top-left-radius: 80px 20px;
+  border-top-right-radius: 80px 20px;
+  border-bottom-left-radius: 80px 40px;
+  border-bottom-right-radius: 80px 40px;
+  z-index: 98;
+  background: url(http://www.transparenttextures.com/patterns/egg-shell.png) repeat left top, #efb814;
+}
+
+.burger_shadow {
+  width: 150px;
+  height: 38px;
+  margin: 2px auto;
+  border-radius: 80px/20px;
+  background: url(http://www.transparenttextures.com/patterns/egg-shell.png) repeat left top, #C98E0F;
+  z-index: 99;
+}
+
+.hover {
+  z-index: 101;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+:hover > .top_burger {
+  top: 22%;
+  left: 20%;
+  box-shadow: -4px 6px 10px rgba(34, 34, 34, 0.5);
+}
+:hover > .meat {
+  top: 37%;
+  left: 16%;
+  box-shadow: -4px 6px 10px rgba(34, 34, 34, 0.5);
+}
+:hover > .bottom_burger {
+  top: 48%;
+  left: 18%;
+  box-shadow: -8px 10px 10px rgba(34, 34, 34, 0.45);
+}
+
+.kun {
+  position: absolute;
+  border-top-right-radius: 8px 4px;
+  border-bottom-left-radius: 8px 4px;
+  margin: 20px;
+  width: 8px;
+  height: 8px;
+  box-shadow: 1px 1px 5px rgba(187, 133, 39, 0.4);
+}
+
+.kun:nth-child(1) {
+  background: #ffffd4;
+  transform: rotate(262deg);
+  top: 4px;
+  left: 104px;
+}
+
+.kun:nth-child(2) {
+  background: white;
+  transform: rotate(71deg);
+  top: 1px;
+  left: 93px;
+}
+
+.kun:nth-child(3) {
+  background: #fffed1;
+  transform: rotate(76deg);
+  top: 35px;
+  left: 80px;
+}
+
+.kun:nth-child(4) {
+  background: #fffffa;
+  transform: rotate(173deg);
+  top: 0px;
+  left: 114px;
+}
+
+.kun:nth-child(5) {
+  background: white;
+  transform: rotate(206deg);
+  top: -6px;
+  left: 37px;
+}
+
+.kun:nth-child(6) {
+  background: #ffffd9;
+  transform: rotate(217deg);
+  top: 26px;
+  left: 99px;
+}
+
+.kun:nth-child(7) {
+  background: #ffffda;
+  transform: rotate(135deg);
+  top: 9px;
+  left: 2px;
+}
+
+.kun:nth-child(8) {
+  background: #fff8cb;
+  transform: rotate(207deg);
+  top: -6px;
+  left: 22px;
+}
+
+.kun:nth-child(9) {
+  background: white;
+  transform: rotate(151deg);
+  top: 40px;
+  left: 54px;
+}
+
+.kun:nth-child(10) {
+  background: #fffff9;
+  transform: rotate(350deg);
+  top: 17px;
+  left: 58px;
+}
+
+.kun:nth-child(11) {
+  background: #fff3c6;
+  transform: rotate(57deg);
+  top: -4px;
+  left: 68px;
+}
+
+.kun:nth-child(12) {
+  background: #ffffd3;
+  transform: rotate(238deg);
+  top: 36px;
+  left: 31px;
+}
+
+.kun:nth-child(13) {
+  background: #ffffe8;
+  transform: rotate(10deg);
+  top: 25px;
+  left: 31px;
+}
+
+.kun:nth-child(14) {
+  background: white;
+  transform: rotate(48deg);
+  top: 35px;
+  left: 134px;
+}
+
+.kun:nth-child(15) {
+  background: #fffff9;
+  transform: rotate(249deg);
+  top: 37px;
+  left: 4px;
+}
+
+.signature {
+  position: absolute;
+  bottom: 20px;
+  z-index: 101;
+  text-align: left;
+}
+.signature img {
+  margin: 10px 0 10px 2px;
+  display: block;
+}
+.signature a {
+  transition: 0.2s ease-out;
+  color: #fff2c5;
+  font-size: 1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.signature a:hover {
+  color: #c1b487;
+}

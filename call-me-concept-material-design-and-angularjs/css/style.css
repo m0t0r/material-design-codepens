@@ -1,0 +1,535 @@
+*{margin: 0;padding: 0;}
+
+p{margin: 0;}
+
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+body{
+	font-family: 'Roboto', sans-serif;
+    background: #4DB6AC;
+}
+
+/********************ICONS*******************/
+
+i[class*="zmdi-"]{
+	margin: 16px;
+	font-size: 24px;
+	cursor:pointer;
+}
+
+.menu{
+	float: left;
+}
+
+.search > i{
+	float: right;
+}
+
+.search{
+	float: right;
+}
+
+.more{
+	float: right;
+	color: rgba(0, 0, 0, 0.39);
+}
+
+.more > i {
+	margin: 24px 0;
+}
+
+.status-icon{
+	float: right
+}
+
+.hour {
+	float: right;
+}
+
+.status-icon > i[class^="zmdi"], .hour{
+	font-size: 17px;
+	margin: 3px 0;
+	color: white;
+}
+
+.toolbar  i{
+	color: white;
+}
+
+.stop > i{
+	font-size: 39px;
+}
+
+/********************HEADER*******************/
+
+.toolbar{
+	height: 56px;
+	background: #009688;
+	width: 100%;
+	overflow: hidden;
+	display: block;
+}
+
+/********************ELEMENTS*******************/
+.container{
+	position: absolute;
+  left: 50%;
+  margin-left: -176px;
+  box-shadow: 0px 2px 41px rgba(0, 0, 0, 0.68);
+}
+
+.contacts-list{
+	width: 360px;
+	height: 623px;
+	overflow: hidden;
+}
+
+.status-bar{
+	height: 24px;
+	background: #0A796D;
+	overflow: hidden;
+}
+
+.list-contact{
+  background: white;
+	height: 488px;
+	overflow: hidden;
+	overflow-y:auto;
+}
+
+.list-iten{
+	height: 71px;
+	border-bottom: 1px solid rgb(228, 228, 228);
+	padding: 0 16px;
+	cursor: pointer;
+}
+
+.infos{
+	padding: 19px 0 14px 0;
+	float: left;
+}
+
+.infos > p:first-child{
+	font-size: 19px;
+  color: rgb(100, 91, 91);
+}
+
+.infos > p:last-child{
+	font-size: 12px;
+	color: #009688;
+}
+
+.button-wrapper.active{
+	display: block;
+	position: absolute;
+	bottom: 54px;
+	width: 100%;
+	height: 314px;
+	overflow: hidden;
+}
+
+.dialpad-box{
+	color: white;
+	bottom: 54px;
+	width: 100%;
+	display: none;
+	z-index: 10;
+	background: #ff1744;
+	position: absolute;
+	overflow: hidden;
+}
+
+	.dialpad-box.active{
+		opacity: 1;
+		display: block;
+	}
+
+
+.row-number > div {
+	float: left;
+	width: 75px;
+	padding: 0 22px;
+	cursor: pointer;
+}
+
+.row-number > div > div:first-child{
+	font-size: 41px;
+	float: left;
+}
+
+.row-number > div > div:nth-child(2){
+	margin: 27px 0 0 19px;
+	font-size: 12px;
+	float: left;
+}
+
+.row-option{
+    clear: both;
+    padding: 0 16px;
+    height: 56px;
+    background: #E20933;;
+}
+
+.row-option > i:nth-child(2) {
+	font-size: 46px;
+	padding: 0;
+	margin: 5px 0px 0 0;
+	text-align: center;
+}
+
+.row-option > i {
+	float: left;
+	width: 109px;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.row-option > i:last-child {
+	text-align: right;
+}
+
+.letters {
+	font-weight: lighter;
+}
+
+.numbers .letters i {
+	font-size: 15px;
+	margin: 0;
+}
+
+.calling{
+	opacity: 0;
+	text-align: center;
+	overflow: hidden;
+	height: 488px;
+	color: white;
+	display: none;
+	background-repeat: no-repeat;
+	background-size: 100px;
+	filter: blur(50px);
+	z-index: 1;
+	-webkit-transition: all .5s;
+	   -moz-transition: all .5s;
+	    -ms-transition: all .5s;
+	     -o-transition: all .5s;
+	        transition: all .5s;
+}
+
+	.calling.active{display: block;}
+	.calling.animate{opacity: 1;}
+
+.contact-img-box{
+	width: 250px;
+	position: absolute;
+	border-radius: 100%;
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+}
+
+.contact-img-box.active{
+	width: 250px !important;
+	float: left;
+	height: 250px !important;
+	position: relative;
+	margin: 0 39px !important;
+	top: 50px !important;
+}
+
+.calling .contact-img{
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+    border-radius: 100%;
+    float: none;
+    overflow: hidden;
+	height: 40px;
+	width: 40px;
+}
+
+.contact-img-box.bg{
+	background: rgba(255, 255, 255, 0.19);
+}
+
+.contact-img-box .contact-img.active img{
+	margin: 0;
+	width: 210px !important;
+}
+
+.calling .contact-img.active{
+	height: 210px ;
+	width: 210px;
+	margin: 19px auto;
+}
+
+.calling .contact-img.active img{
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+	        width: 210px !important;
+}
+
+.contact-img img{
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+}
+
+.calling > div:first-child{
+	width: 100%;
+	position: relative;
+	float: left;
+	z-index: 5;
+}
+
+.calling-bg{
+	width: 100%;
+	height: 100%;
+	background-size: 450px 578px !important;
+	-webkit-filter: blur(36px);
+}
+.calling > div > div:nth-child(2){
+	opacity: 0;
+	font-size: 26px;
+	color: rgba(255, 255, 255, 0.74);
+	font-weight: lighter;
+}
+
+.calling > div > div:nth-child(2).active{
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+	    -ms-transition: all .2s;
+	     -o-transition: all .2s;
+	        transition: all .2s;
+	        opacity: 1;
+}
+
+.calling-options > div{
+	margin: 8px 0 0 0;
+	float: left;
+}
+
+.calling-options{
+	overflow: auto;
+	clear: both;
+	width: 300px;
+	margin: 0 auto;
+}
+
+.calling .contact-number{
+	font-size: 16px;
+}
+
+.calling-options .stop{
+	width: 70px;
+	height: 70px;
+	background: red;
+	border-radius: 100%;
+	cursor: pointer;
+}
+
+.calling-options  div.active{
+	-webkit-transform: scale(1);
+	   -moz-transform: scale(1);
+	    -ms-transform: scale(1);
+	     -o-transform: scale(1);
+	        transform: scale(1);
+}
+
+.calling-options  div{
+	-webkit-transform: scale(0);
+	   -moz-transform: scale(0);
+	    -ms-transform: scale(0);
+	     -o-transform: scale(0);
+	        transform: scale(0);
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+	    -ms-transition: all .2s;
+	     -o-transition: all .2s;
+	        transition: all .2s;
+}
+
+.navigation-buttons{
+	width: 100%;
+	background: black;
+	height: 55px;
+	bottom: 0;
+	color: white;
+}
+
+.navigation-buttons > i{
+	padding: 0 30px;
+}
+
+.calling > div > div:nth-child(2){
+	clear: both;
+	height: 63px;
+	margin: 0px 0 73px 0;
+	position: relative;
+	top: 53px;
+}
+
+.navigation-buttons > i:first-child{
+	transform: rotate(90deg);
+}
+
+/********************BUTTONS*******************/
+
+.dialpad{
+  text-align: center;
+	width: 56px;
+	height: 56px;
+	border-radius: 100%;
+	background: #ff1744;
+	float: right;
+	margin: 16px;
+	cursor: pointer;
+	color: white;
+	box-shadow: 0 6px 7px rgba(0, 0, 0, 0.44);
+	position: relative;
+	bottom: 142px;
+	right: 1px;
+	display: block;
+
+	-webkit-transform: scale(1);
+	   -moz-transform: scale(1);
+	    -ms-transform: scale(1);
+	     -o-transform: scale(1);
+	        transform: scale(1);
+
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+}
+
+	.dialpad:hover{
+		box-shadow: 0 12px 20px  rgba(0, 0, 0, 0.44);
+	}
+
+	.dialpad:active{
+		box-shadow: 0 6px 6px  rgba(0, 0, 0, 0.44);
+	}
+
+	.dialpad.active,
+	.dialpad-box.hide,
+	.button-wrapper.hide,
+	.list-contact.desactive{display: none !important;
+	}
+
+	.list-contact.desactive ~ .dialpad {
+		-webkit-transform: scale(0);
+		   -moz-transform: scale(0);
+		    -ms-transform: scale(0);
+		     -o-transform: scale(0);
+		        transform: scale(0);
+	}
+
+.layer{
+	float: right;
+	margin: 16px;
+	position: relative;
+	width: 56px;
+	height: 56px;
+	border-radius: 100%;
+	right: 0px;
+	bottom: -228px;
+  background: #ff1744;
+}
+
+	.layer.active{
+		display: block;
+		-webkit-transform: translate(-130px,200px);
+	    -ms-transform: translate(-130px,200px);
+	    transform: translate(-131px,-110px);
+
+	    -webkit-transition: .2s all;
+	    transition: .2s all;
+	}
+
+	 .layer.active.animation{
+	 	-webkit-transform: scale(100);
+	    -ms-transform: scale(100);
+	    transform: scale(100);
+	    -webkit-transition: 1s all;
+	    transition: 1s all;
+	}
+
+.backspace{
+
+}
+/********************INPUTS*******************/
+
+.input-dialpad > input{
+	border: none;
+	width: 286px;
+	font-size: 46px;
+	background: none;
+	padding: 8px 2px 0 16px;
+	color: rgb(195, 14, 49);
+	float: left;
+	text-align: center;
+}
+
+.search > input {
+	padding: 10px;
+	margin: 5px 0;
+	background-color: rgba(255, 255, 255, 0);
+	border: none;
+	display: none;
+}
+
+/********************ANIMATIONS*******************/
+
+.ripple {
+	background: rgba(229, 28, 28, 1);
+	border-radius: 100%;
+	position: absolute;
+	min-width: 50px;
+	min-height: 50px;
+	-webkit-transform: scale(0);
+	   -moz-transform: scale(0);
+	    -ms-transform: scale(0);
+	     -o-transform: scale(0);
+	        transform: scale(0);
+
+ 	-webkit-transition: all .2s;
+       -moz-transition: all .2s;
+        -ms-transition: all .2s;
+         -o-transition: all .2s;
+            transition: all .2s;
+}
+
+.ripple.active{
+    background: rgba(255, 255, 255, 0.18);
+    -webkit-transform: scale(1);
+	   -moz-transform: scale(1);
+	    -ms-transform: scale(1);
+	     -o-transform: scale(1);
+	        transform: scale(1);
+}
+
+
+.position{
+	display: none;
+    -webkit-transition: .3s all ease .3s;
+    transition: .3s all ease .3s;
+}
+
+.list-contact .contact-img{
+	border-radius: 100%;
+	overflow: hidden;
+	float: left;
+	margin: 16px 16px 0 0;
+	height: 40px;
+	width: 40px;
+}

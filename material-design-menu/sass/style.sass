@@ -1,0 +1,72 @@
+$color: #FF4182
+$blue: #2A3158
+
+body
+	background: $blue
+	font-family: 'Helvetica Neue'
+
+#main-button
+	position: absolute
+	z-index: 1
+	height: 40px
+	width: 40px
+	top: 50%
+	left: 50%
+	margin-left: -20px
+	margin-top: -20px
+	background: $color
+	border-radius: 40px
+	color: #fff
+	line-height: 40px
+	text-align: center
+	cursor: pointer
+	transition: all 0.4s ease
+
+.disp
+	transform: scale(0) rotate(90deg)
+	opacity: 0
+
+.Button	
+	position: absolute
+	height: 40px
+	width: 40px
+	background: $color
+	border-radius: 40px
+	color: #fff
+	line-height: 40px
+	text-align: center
+	cursor: pointer
+	top: 50%
+	left: 50%
+	transition: all 0.2s ease
+	opacity: 0
+	&:hover
+		transform: scale(1.1)!important
+		background: darken($color, 4)
+		box-shadow: 0px 0px 10px 0px darken($blue, 7)
+
+#a, #b, #c, #d 
+	margin-left: -20px
+	margin-top: -20px
+	transform: rotate(-90deg)
+
+.a-clicked
+	opacity: 1
+	margin-left: -45px!important
+	margin-top: -45px!important
+	transform: rotate(0deg)!important
+.b-clicked
+	opacity: 1
+	margin-left: 0px!important
+	margin-top: -45px!important
+	transform: rotate(0deg)!important
+.c-clicked
+	opacity: 1
+	margin-left: -45px!important
+	margin-top: 0px!important
+	transform: rotate(0deg)!important
+.d-clicked
+	opacity: 1
+	margin-left: 0px!important
+	margin-top: 0px!important
+	transform: rotate(0deg)!important

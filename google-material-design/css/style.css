@@ -1,0 +1,69 @@
+@import url(http://fonts.googleapis.com/css?Roboto);
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #f1f1f1;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+.material {
+  width: 300px;
+  height: 300px;
+  padding: 1em;
+  background: white;
+  position: relative;
+  text-align: center;
+  color: #4d4d4d;
+  box-shadow: 0 0 4px 2px rgba(80, 80, 80, 0.1);
+  overflow: hidden;
+  -webkit-transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+}
+.material:hover {
+  box-shadow: 0 2px 4px 4px rgba(80, 80, 80, 0.2);
+}
+.material .background {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 3em;
+  height: 3em;
+  -webkit-transition: width 0.3s ease, height 0.3s ease, border-radius 0.4s ease, top 0.3s ease, left 0.3s ease;
+  transition: width 0.3s ease, height 0.3s ease, border-radius 0.4s ease, top 0.3s ease, left 0.3s ease;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: 0 2px 4px 0px rgba(40, 40, 40, 0.4);
+}
+.material .background.active {
+  width: 145%;
+  height: 145%;
+  left: 50%;
+  top: -20%;
+  z-index: 9;
+}
+.material .background1 {
+  background: #2196F3;
+  left: 30%;
+}
+.material .background2 {
+  background: #F44336;
+}
+.material .background3 {
+  background: #009688;
+  left: 70%;
+}
+
+.centered, .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
